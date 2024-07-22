@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Container from '@/components/Container.astro';
+import Hero from '@/components/Hero.astro';
 ---
 
 <Layout
@@ -8,6 +10,8 @@ import Layout from '../layouts/Layout.astro';
   canonical='http://localhost:4321'
 >
   <main>
-    <h1>Welcome to <span class='text-gradient'>Astro</span></h1>
+    <Container>
+      <Hero />
+    </Container>
   </main>
 </Layout>

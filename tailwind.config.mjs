@@ -40,8 +40,6 @@ export default {
         xs: '380px',
       },
       colors: {
-        dim: '#9a9ca7',
-        light: '#ADB0BB',
         primary: {
           50: '#F2FCFD',
           100: '#ccf3f7',

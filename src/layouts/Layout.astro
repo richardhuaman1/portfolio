@@ -1,4 +1,6 @@
 ---
+import '@fontsource-variable/dm-sans';
+
 import Seo from '@/components/Seo.astro';
 import { ViewTransitions } from 'astro:transitions';
 import Footer from './Footer.astro';
@@ -33,5 +35,11 @@ const { title, description, canonical, image } = Astro.props;
         alt='Rays background'
       />
     </div>
+    <style is:global>
+      html {
+        font-family: 'DM Sans Variable';
+        scroll-behavior: smooth;
+      }
+    </style>
   </body>
 </html>

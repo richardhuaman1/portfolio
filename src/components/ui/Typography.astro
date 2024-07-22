@@ -1,0 +1,43 @@
+---
+import type { HTMLTag, Polymorphic } from 'astro/types';
+
+type Props<Tag extends HTMLTag> = Polymorphic<{
+  as: Tag;
+  size?: keyof typeof sizeClasses;
+  color?: keyof typeof colorClasses;
+}>;
+
+const { as: Tag, class: className, size = 'default', color = 'default', ...props } = Astro.props;
+
+const sizeClasses: { [key: string]: string } = {
+  default: '',
+  xxs: 'text-xxs',
+  xs: 'sm:text-xs text-xxs',
+  sm: 'sm:text-sm text-xs',
+  md: 'sm:text-md text-sm',
+  lg: 'sm:text-lg text-md',
+  xl: 'xl:text-4xl lg:text-3xl text-2xl',
+  '2xl': 'xl:text-5xl lg:text-5xl md:text-4xl text-3xl',
+  '3xl': 'xl:text-6xl lg:text-5xl text-4xl',
+  '4xl': 'xl:text-7xl lg:text-6xl text-5xl',
+  '5xl': 'xl:text-8xl lg:text-7xl text-4xl',
+};
+
+const colorClasses = {
+  default: 'text-[#202020] dark:text-white',
+  dim: 'text-[#888888] dark:text-[#9a9ca7]',
+  light: 'text-[#585858] dark:text-[#ADB0BB]',
+  primary: 'text-primary',
+  secondary: 'text-secondary',
+};
+
+const classes = [
+  sizeClasses[size as keyof typeof sizeClasses],
+  colorClasses[color as keyof typeof colorClasses],
+  className,
+];
+---
+
+<Tag class:list={classes} {...props} tabindex='0'>
+  <slot />
+</Tag>

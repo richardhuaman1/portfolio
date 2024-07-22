@@ -1,20 +1,20 @@
 export function envConfig() {
   return {
-    appUrl: process.env.APP_URL,
-    nodeEnv: process.env.NODE_ENV,
+    appUrl: import.meta.env.VITE_APP_URL,
+    nodeEnv: import.meta.env.VITE_NODE_ENV,
     nodemailer: {
-      email: process.env.NODE_MAILER_USER,
-      password: process.env.MAILER_PASSWORD,
+      email: import.meta.env.VITE_NODE_MAILER_USER,
+      password: import.meta.env.VITE_MAILER_PASSWORD,
     },
     projectsUrl: {
-      crunchyroll: process.env.PROJECT_CRUNCHYROLL_CLONE_URL,
-      portfolioApp: process.env.PROJECT_PORTFOLIO_APP,
-      ecommerceTgd: process.env.PROJECT_ECOMMERCE_TGD,
+      crunchyroll: import.meta.env.VITE_PROJECT_CRUNCHYROLL_CLONE_URL,
+      portfolioApp: import.meta.env.VITE_PROJECT_PORTFOLIO_APP,
+      ecommerceTgd: import.meta.env.VITE_PROJECT_ECOMMERCE_TGD,
     },
     contact: {
-      github: process.env.GITHUB_URL,
-      linkedin: process.env.LINKEDIN_URL,
-      email: process.env.CONTACT_EMAIL,
+      github: import.meta.env.VITE_GITHUB_URL,
+      linkedin: import.meta.env.VITE_LINKEDIN_URL,
+      email: import.meta.env.VITE_CONTACT_EMAIL,
     },
   };
 }
