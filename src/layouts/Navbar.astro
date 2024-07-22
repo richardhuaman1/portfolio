@@ -1,0 +1,59 @@
+---
+import Container from '@/components/Container.astro';
+import Logo from '@/components/Logo.astro';
+import ThemeToggle from '@/components/ThemeToggle.astro';
+---
+
+<header class='sticky top-0 z-50 bg-white/50 backdrop-blur-lg dark:bg-deep-dark/50'>
+  <Container className='flex items-center justify-between py-4'>
+    <Logo />
+    <ul class='hidden lg:flex'>
+      <li>
+        <a
+          class={`flex items-center justify-center px-4 py-3 cursor-pointer ${
+            true
+              ? 'font-semibold text-primary dark:text-primary-500'
+              : 'font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
+          }`}
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          class={`flex items-center justify-center px-4 py-3 cursor-pointer ${
+            false
+              ? 'font-semibold text-primary dark:text-primary-500'
+              : 'font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
+          }`}
+        >
+          Experience
+        </a>
+      </li>
+      <li>
+        <a
+          class={`flex items-center justify-center px-4 py-3 cursor-pointer ${
+            false
+              ? 'font-semibold text-primary dark:text-primary-500'
+              : 'font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
+          }`}
+        >
+          Projects
+        </a>
+      </li>
+      <li>
+        <a
+          class={`flex items-center justify-center px-4 py-3 cursor-pointer ${
+            false
+              ? 'font-semibold text-primary dark:text-primary-500'
+              : 'font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
+          }`}
+        >
+          Contact
+        </a>
+      </li>
+    </ul>
+    <!--     <MenuDropdown /> -->
+    <ThemeToggle />
+  </Container>
+</header>

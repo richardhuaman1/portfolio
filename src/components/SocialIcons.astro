@@ -1,0 +1,25 @@
+---
+import { envConfig } from '@/config/env';
+import Github from '@/icons/github.astro';
+import Linkedin from '@/icons/linkedin.astro';
+import Gmail from '@/icons/gmail.astro';
+
+const GITHUB_URL = envConfig().contact.github || '/';
+const LINKEDIN_URL = envConfig().contact.linkedin || '/';
+const CONTACT_EMAIL = envConfig().contact.email || 'example@gmail.com';
+---
+
+<div class='gap-8 flex items-center justify-center'>
+  <a href={LINKEDIN_URL} target='_blank' class='flex items-center justify-center flex-col gap-1'>
+    <Linkedin class:list='w-9 h-9' />
+    <p class='text-sm text-light'>Linkedin</p>
+  </a>
+  <a href={GITHUB_URL} target='_blank' class='flex items-center justify-center flex-col gap-1'>
+    <Github class:list='w-9 h-9' />
+    <p class='text-sm text-light'>Github</p>
+  </a>
+  <a href={`mailto:${CONTACT_EMAIL}`} class='flex items-center justify-center flex-col gap-1'>
+    <Gmail class:list='w-9 h-9' />
+    <p class='text-sm text-light'>Gmail</p>
+  </a>
+</div>
