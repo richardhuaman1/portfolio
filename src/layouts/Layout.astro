@@ -23,7 +23,7 @@ const { title, description, canonical, image } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
-    <div id='main-content' class='min-h-screen dark:bg-deep-dark bg-white relative'>
+    <div id='main-content' class='min-h-screen dark:bg-deep-dark w-full bg-white relative'>
       <Navbar />
       <slot />
       <Footer />
@@ -36,9 +36,33 @@ const { title, description, canonical, image } = Astro.props;
       />
     </div>
     <style is:global>
+      :root {
+        color-scheme: light dark;
+      }
+
+      body {
+        color: rgba(17, 17, 17, 0.9);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        overscroll-behavior: none;
+      }
+
       html {
         font-family: 'DM Sans Variable';
         scroll-behavior: smooth;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          color: rgba(255, 255, 255, 0.9);
+        }
       }
     </style>
   </body>

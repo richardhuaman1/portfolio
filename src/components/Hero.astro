@@ -1,14 +1,22 @@
 ---
-import SocialButtons from './SocialButtons.astro';
 import Typography from './ui/Typography.astro';
-import MouseScroll from '../icons/mouse-scroll.astro';
+import MouseScroll from './icons/MouseScrollIcon.astro';
+import MailIcon from './icons/MailIcon.astro';
+import LinkedInIcon from './icons/LinkedInIcon.astro';
+import GithubIcon from './icons/GitHubIcon.astro';
+import SocialPill from './SocialPill.astro';
+import { envConfig } from '@/config/env';
+
+const GITHUB_URL = envConfig().contact.github || '/';
+const LINKEDIN_URL = envConfig().contact.linkedin || '/';
+const CONTACT_EMAIL = envConfig().contact.email || 'example@gmail.com';
 ---
 
 <div class='space-y-10 pt-10 md:pt-12'>
   <div class='flex flex-col items-center justify-between gap-10 lg:flex-row lg:gap-12 xl:gap-16'>
     <div class='mx-auto max-w-xl flex-1 space-y-2 md:max-w-3xl lg:w-full lg:max-w-full'>
       <div>
-        <Typography as='span' size='4xl' class='font-bold text-yellow-500 dark:text-yellow-600'>
+        <Typography as='span' size='4xl' class='font-bold text-yellow-500 dark:text-yellow-600/80'>
           Hello 👋
         </Typography>
         <Typography as='h1' size='5xl' class='font-semibold'>I'm Richard Huaman.</Typography>
@@ -29,8 +37,19 @@ import MouseScroll from '../icons/mouse-scroll.astro';
           functionality in every project
         </Typography>
       </div>
-      <div class='pt-6'>
-        <SocialButtons />
+      <div class='pt-6 flex items-center justify-start gap-3 flex-wrap'>
+        <SocialPill href={GITHUB_URL}>
+          <GithubIcon />
+          Github
+        </SocialPill>
+        <SocialPill href={LINKEDIN_URL}>
+          <LinkedInIcon size='size-6' />
+          Linkedin
+        </SocialPill>
+        <SocialPill href={`mailto:${CONTACT_EMAIL}`}>
+          <MailIcon size='size-6' />
+          Email
+        </SocialPill>
       </div>
     </div>
     <div class='overflow-hidden rounded-full'>
