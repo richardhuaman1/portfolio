@@ -16,7 +16,7 @@ const CONTACT_EMAIL = envConfig().contact.email || 'example@gmail.com';
   <div class='flex flex-col items-center justify-between gap-10 lg:flex-row lg:gap-12 xl:gap-16'>
     <div class='mx-auto max-w-xl flex-1 space-y-2 md:max-w-3xl lg:w-full lg:max-w-full'>
       <div>
-        <Typography as='span' size='4xl' class='font-bold text-yellow-500 dark:text-yellow-600/80'>
+        <Typography as='span' size='4xl' class='font-bold text-yellow-500 dark:text-yellow-500'>
           Hello 👋
         </Typography>
         <Typography as='h1' size='5xl' class='font-semibold'>I'm Richard Huaman.</Typography>
@@ -30,11 +30,11 @@ const CONTACT_EMAIL = envConfig().contact.email || 'example@gmail.com';
         <Typography
           as='p'
           size='lg'
-          class='text-md md:text-[18px] lg:text-[20px] dark:text-gray-200'
+          class='text-md md:text-[18px] lg:text-[20px] dark:text-slate-300'
         >
-          I'm a software engineer with over 2 years of experience. I focus on using best practices
-          to create scalable and maintainable applications, always aiming for efficiency and
-          functionality in every project
+          <b class='text-yellow-500'>+ 2 years of experience</b> as a Software Engineer. I focus on using
+          best practices to create scalable and maintainable applications, always aiming for efficiency
+          and functionality in every project
         </Typography>
       </div>
       <div class='pt-6 flex items-center justify-start gap-3 flex-wrap'>
