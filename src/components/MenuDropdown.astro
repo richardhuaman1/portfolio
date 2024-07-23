@@ -49,6 +49,11 @@ const sectionCollection = Object.values(sectionOptions);
 
     const navLinks = document.querySelectorAll('.dropdown-menu a');
 
+    // Apply the active class to the first link on page load
+    if (navLinks.length > 0) {
+      navLinks[0].classList.add('!text-primary');
+    }
+
     navLinks.forEach((option, index) => {
       option.addEventListener('click', (event) => {
         event.preventDefault();

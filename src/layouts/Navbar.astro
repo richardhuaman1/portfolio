@@ -61,6 +61,11 @@ import { sectionOptions } from '@/constants/section-ids';
   document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('a[data-target-id]');
 
+    // Apply the active class to the first link on page load
+    if (navLinks.length > 0) {
+      navLinks[0].classList.add('!text-primary');
+    }
+
     navLinks.forEach((link) => {
       link.addEventListener('click', (event) => {
         const targetId = link.getAttribute('data-target-id');
