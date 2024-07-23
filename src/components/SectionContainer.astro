@@ -19,8 +19,8 @@ const props = Astro.props;
     {
       props.title && 'Icon' in props && (
         <div class='flex items-center justify-start gap-3 mb-5'>
-          <props.Icon class:list='size-8' />
-          <Typography as='h2' class='font-medium text-2xl lg:text-[30px]'>
+          <props.Icon class:list='size-8 text-black dark:text-white' />
+          <Typography as='h2' size='2xl' class='font-medium'>
             {props.title}
           </Typography>
         </div>
