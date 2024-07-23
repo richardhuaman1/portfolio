@@ -12,19 +12,11 @@ interface Props {
 const { technologies, title } = Astro.props;
 ---
 
-<div class='md:inline-flex'>
-  <div class='flex items-center justify-start md:mb-0 mb-1'>
-    <DotIcon class:list='size-10 text-gray-800 dark:text-gray-200' />
-    <Typography
-      as='p'
-      size='2xl'
-      class='dark:text-gray-200 text-gray-800 lg:whitespace-nowrap md:min-w-[20rem]'
-      >{title}&nbsp;:</Typography
-    >
-  </div>
-  <div class='lg:ml-4 md:ml-3 ml-[40px]'>
-    <div class='flex items-center justify-start gap-2 h-full flex-wrap'>
-      {technologies.map((t) => <Chip color={t.color}>{t.name}</Chip>)}
-    </div>
+<div>
+  <Typography as='p' size='xl' class='dark:text-gray-200 text-gray-800 font-medium'
+    >{title}&nbsp;:</Typography
+  >
+  <div class='mt-2 flex items-center justify-start gap-2 h-full flex-wrap'>
+    {technologies.map((t) => <Chip color={t.color}>{t.name}</Chip>)}
   </div>
 </div>
