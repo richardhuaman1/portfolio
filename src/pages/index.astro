@@ -1,7 +1,11 @@
 ---
+import CodeIcon from '@/components/icons/CodeIcon.astro';
+import BriefcaseIcon from '@/components/icons/BriefcaseIcon.astro';
 import Layout from '../layouts/Layout.astro';
 import SectionContainer from '@/components/SectionContainer.astro';
-import Hero from '@/components/sections/Hero.astro';
+import HeroSection from '@/components/sections/HeroSection.astro';
+import WorkExperienceSection from '@/components/sections/WorkExperienceSection.astro';
+import ProjectsSection from '@/components/sections/ProjectsSection.astro';
 ---
 
 <Layout
@@ -10,8 +14,16 @@ import Hero from '@/components/sections/Hero.astro';
   canonical='http://localhost:4321'
 >
   <main>
-    <SectionContainer>
-      <Hero />
-    </SectionContainer>
+    <div class='space-y-10'>
+      <SectionContainer>
+        <HeroSection />
+      </SectionContainer>
+      <SectionContainer title='Work Experience' Icon={BriefcaseIcon}>
+        <WorkExperienceSection />
+      </SectionContainer>
+      <SectionContainer title='Projects' Icon={CodeIcon}>
+        <ProjectsSection />
+      </SectionContainer>
+    </div>
   </main>
 </Layout>

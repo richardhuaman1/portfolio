@@ -1,0 +1,114 @@
+---
+import { envConfig } from '@/config/env';
+import ProjectItem from '../ProjectItem.astro';
+import type { Project } from '@/types/project.types';
+
+const projectsList: Project[] = [
+  {
+    title: 'Document management system (DMS)',
+    description:
+      'Used to create, store, manage, and track electronic documents and images of paper-based documents through software.',
+    image: '/images/projects/cms_tramites.png',
+    previewUrl: envConfig().projectsUrl.crunchyroll || '',
+    repositoryUrl: null,
+    technologies: [
+      {
+        name: 'React',
+        color: 'blue',
+      },
+      {
+        name: 'Next JS',
+        color: 'red',
+      },
+      {
+        name: 'React Query',
+        color: 'orange',
+      },
+      {
+        name: 'Typescript',
+        color: 'blue',
+      },
+      {
+        name: 'Tailwind Css',
+        color: 'blue',
+      },
+      {
+        name: 'Express',
+        color: 'green',
+      },
+      {
+        name: 'MySQL',
+        color: 'orange',
+      },
+      {
+        name: 'Nest JS',
+        color: 'red',
+      },
+    ],
+  },
+  {
+    title: 'Streaming Platform',
+    description:
+      'A modern anime streaming platform built using React, TypeScript, and Tailwind CSS. Enjoy a clean and responsive user interface.',
+    image: '/images/projects/streaming_platform.png',
+    previewUrl: envConfig().projectsUrl.crunchyroll || '',
+    repositoryUrl: 'https://github.com/richardhuam/crunchyroll-clone-pb.git',
+    technologies: [
+      {
+        name: 'React',
+        color: 'blue',
+      },
+      {
+        name: 'Typescript',
+        color: 'blue',
+      },
+      {
+        name: 'Tailwind Css',
+        color: 'blue',
+      },
+    ],
+  },
+
+  {
+    title: 'Streaming Platform',
+    description:
+      'A beautiful design created with NextJS, Typescript and Tailwind CSS. Show your works, skills, projects and more, it includes features such as responsive layout and dark mode.',
+    image: '/images/projects/portfolio_design.png',
+    previewUrl: envConfig().projectsUrl.portfolioApp || '',
+    repositoryUrl: 'https://github.com/richardhuam/portfolio-app.git',
+    technologies: [
+      {
+        name: 'Next JS',
+        color: 'gray',
+      },
+      {
+        name: 'Typescript',
+        color: 'blue',
+      },
+      {
+        name: 'Tailwind Css',
+        color: 'blue',
+      },
+    ],
+  },
+];
+---
+
+<div>
+  <div class='space-y-10'>
+    {
+      projectsList.map((project) => {
+        return (
+          <ProjectItem
+            description={project.description}
+            image={envConfig().appUrl + project.image}
+            technologies={project.technologies}
+            title={project.title}
+            previewUrl={project.previewUrl}
+            repositoryUrl={project.repositoryUrl}
+          />
+        );
+      })
+    }
+  </div>
+</div>

@@ -1,0 +1,13 @@
+---
+import TimelineLeftSide from './TimelineLeftSide.astro';
+import TimelineRightSide from './TimelineRightSide.astro';
+import type { Timeline } from '../types/timeline.types';
+
+type Props = Timeline;
+const timelineData = Astro.props;
+---
+
+<TimelineLeftSide {...timelineData} />
+<TimelineRightSide>
+  <slot />
+</TimelineRightSide>

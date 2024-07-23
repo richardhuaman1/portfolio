@@ -1,0 +1,33 @@
+---
+import Typography from './ui/Typography.astro';
+import CircleIcon from './icons/CircleIcon.astro';
+
+interface Props {
+  title: string;
+  subTitle: string;
+  description: string;
+  image: string;
+}
+
+const { description, title, subTitle } = Astro.props;
+---
+
+<div class='relative pb-5 md:col-span-2'>
+  <div class='sticky top-28'>
+    <CircleIcon
+      class:list='absolute left-[-38px] rounded-full bg-background dark:text-gray-500 md:left-[-50px]'
+    />
+    <Typography as='p' size='xl' color='primary' class='font-semibold'>
+      {title}
+    </Typography>
+    <Typography as='p' size='xl' class='font-medium'>
+      {subTitle}
+    </Typography>
+    <Typography as='p' size='md' color='light'>
+      {description}
+    </Typography>
+    <!-- <div class='mt-4 flex items-center justify-start'>
+      <img src={image} class='size-10' />
+    </div> -->
+  </div>
+</div>

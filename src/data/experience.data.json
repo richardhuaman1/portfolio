@@ -1,0 +1,27 @@
+{
+  "experience": [
+    {
+        "eps": {
+          "companyName":"EPS Ilo.",
+          "from": "Aug, 2023",
+          "to":"Present",
+          "position":"FullStack Developer",
+          "logo":"/images/eps-ilo.png"
+        },
+        "stomarx": {
+          "companyName":"Stomarx",
+          "from": "Jun, 2022",
+          "to":"Aug, 2023",
+          "position":"FullStack Developer",
+          "logo":"/images/stomarx.svg"
+        },
+        "fairdent": {
+          "companyName":"Fairdent",
+          "from": "Nov, 2021",
+          "to":"Jun, 2022",
+          "position":"FullStack Developer",
+          "logo":"/images/fairdent.svg"
+        }
+    }
+  ]
+}
