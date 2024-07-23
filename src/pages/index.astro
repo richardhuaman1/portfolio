@@ -7,6 +7,7 @@ import HeroSection from '@/components/sections/HeroSection.astro';
 import WorkExperienceSection from '@/components/sections/WorkExperienceSection.astro';
 import ProjectsSection from '@/components/sections/ProjectsSection.astro';
 import SkillsSection from '@/components/sections/SkillsSection.astro';
+import { sectionOptions } from '@/constants/section-ids';
 ---
 
 <Layout
@@ -15,19 +16,32 @@ import SkillsSection from '@/components/sections/SkillsSection.astro';
   canonical='http://localhost:4321'
 >
   <main>
-    <div class='space-y-16'>
-      <SectionContainer>
-        <HeroSection />
-      </SectionContainer>
-      <SectionContainer title='Technical Skills' Icon={CodeIcon}>
-        <SkillsSection />
-      </SectionContainer>
-      <SectionContainer title='Work Experience' Icon={BriefcaseIcon}>
-        <WorkExperienceSection />
-      </SectionContainer>
-      <SectionContainer title='Projects' Icon={CodeIcon}>
-        <ProjectsSection />
-      </SectionContainer>
-    </div>
+    <SectionContainer id={sectionOptions.home}>
+      <HeroSection />
+    </SectionContainer>
+    <SectionContainer
+      id={sectionOptions.skills}
+      title='Technical Skills'
+      Icon={CodeIcon}
+      class:list='py-[72px] lg:py-20'
+    >
+      <SkillsSection />
+    </SectionContainer>
+    <SectionContainer
+      id={sectionOptions.experience}
+      title='Work Experience'
+      Icon={BriefcaseIcon}
+      class:list='py-[72px] lg:py-20'
+    >
+      <WorkExperienceSection />
+    </SectionContainer>
+    <SectionContainer
+      id={sectionOptions.projects}
+      title='Projects'
+      Icon={CodeIcon}
+      class:list='py-[72px] lg:py-20'
+    >
+      <ProjectsSection />
+    </SectionContainer>
   </main>
 </Layout>

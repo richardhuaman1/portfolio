@@ -2,7 +2,7 @@
 import Container from './Container.astro';
 import Typography from './ui/Typography.astro';
 
-type Props =
+type BaseProps =
   | {
       title: string;
       Icon: any;
@@ -10,6 +10,10 @@ type Props =
   | {
       title?: string;
     };
+
+type Props = BaseProps & {
+  id: string;
+};
 
 const props = Astro.props;
 ---

@@ -1,18 +1,11 @@
 ---
+import { sectionOptions } from '@/constants/section-ids';
 import MobileMenuIcon from './icons/MobileMenuIcon.astro';
-const options = ['Home', 'Skills', 'Experience', 'Projects'];
+
+const sectionCollection = Object.values(sectionOptions);
 ---
 
-<style>
-  .dropdown-menu {
-    display: none;
-  }
-  .dropdown-menu.show {
-    display: block;
-  }
-</style>
-
-<div class='relative md:hidden'>
+<div class='relative md:hidden' id='dropdown-container'>
   <div class='flex items-center justify-center h-full'>
     <button id='dropdown-button' class='h-10 w-auto p-1.5'>
       <MobileMenuIcon class:list='size-9 dark:text-white text-gray-700' />
@@ -24,10 +17,12 @@ const options = ['Home', 'Skills', 'Experience', 'Projects'];
   >
     <div class='py-1' role='menu' aria-orientation='vertical' aria-labelledby='dropdown-button'>
       {
-        options.map((option) => (
+        sectionCollection.map((option, index) => (
           <a
+            href={index === 0 ? '#' : `#${sectionCollection[index]}`}
             class='block px-4 py-2 text-gray-700 dark:text-white active:dark:bg-gray-700 active:bg-gray-200'
             role='menuitem'
+            data-target-id={index === 0 ? '' : sectionCollection[index]}
           >
             {option}
           </a>
@@ -46,18 +41,43 @@ const options = ['Home', 'Skills', 'Experience', 'Projects'];
       dropdownMenu?.classList.toggle('show');
     });
 
-    function handleOptionClick() {
-      dropdownMenu?.classList.remove('show');
-    }
-
     document.addEventListener('click', (event) => {
       if (!dropdownContainer?.contains(event.target as any)) {
         dropdownMenu?.classList.remove('show');
       }
     });
 
-    document.querySelectorAll('.dropdown-menu a').forEach((option) => {
-      option.addEventListener('click', handleOptionClick);
+    const navLinks = document.querySelectorAll('.dropdown-menu a');
+
+    navLinks.forEach((option, index) => {
+      option.addEventListener('click', (event) => {
+        event.preventDefault();
+        dropdownMenu?.classList.remove('show');
+        if (index === 0) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const targetId = option.getAttribute('data-target-id');
+          if (targetId) {
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        }
+
+        // Remove the active class from all links
+        navLinks.forEach((link) => link.classList.remove('!text-primary'));
+        // Add the active class to the clicked link
+        option.classList.add('!text-primary');
+      });
     });
   </script>
+  <style>
+    .dropdown-menu {
+      display: none;
+    }
+    .dropdown-menu.show {
+      display: block;
+    }
+  </style>
 </div>
