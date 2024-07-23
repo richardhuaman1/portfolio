@@ -1,0 +1,75 @@
+---
+import SkillItem from '../SkillItem.astro';
+
+type Technologies = {
+  name: string;
+  color: string;
+};
+
+const programmingLanguages: Technologies[] = [
+  {
+    name: 'Javascript',
+    color: 'bg-yellow-500',
+  },
+  {
+    name: 'Typescript',
+    color: 'bg-blue-500',
+  },
+  {
+    name: 'HTML',
+    color: 'bg-orange-500',
+  },
+  {
+    name: 'CSS',
+    color: 'bg-blue-500',
+  },
+];
+
+const technologies: Technologies[] = [
+  {
+    name: 'React',
+    color: 'bg-sky-500',
+  },
+  {
+    name: 'Next',
+    color: 'bg-gray-600',
+  },
+  {
+    name: 'Node',
+    color: 'bg-green-500',
+  },
+  {
+    name: 'Express',
+    color: 'bg-gray-500',
+  },
+  {
+    name: 'Nest',
+    color: 'bg-red-500',
+  },
+  {
+    name: 'Linux',
+    color: 'bg-gray-500',
+  },
+];
+
+const tools: Technologies[] = [
+  {
+    name: 'Git',
+    color: 'bg-orange-500',
+  },
+  {
+    name: 'Github',
+    color: 'bg-gray-600',
+  },
+  {
+    name: 'CI/CD',
+    color: 'bg-gray-600',
+  },
+];
+---
+
+<div class='space-y-4'>
+  <SkillItem title='Programming Languages' technologies={programmingLanguages} />
+  <SkillItem title='Technologies' technologies={technologies} />
+  <SkillItem title='Tools' technologies={tools} />
+</div>

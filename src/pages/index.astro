@@ -6,6 +6,7 @@ import SectionContainer from '@/components/SectionContainer.astro';
 import HeroSection from '@/components/sections/HeroSection.astro';
 import WorkExperienceSection from '@/components/sections/WorkExperienceSection.astro';
 import ProjectsSection from '@/components/sections/ProjectsSection.astro';
+import SkillsSection from '@/components/sections/SkillsSection.astro';
 ---
 
 <Layout
@@ -17,6 +18,9 @@ import ProjectsSection from '@/components/sections/ProjectsSection.astro';
     <div class='space-y-10'>
       <SectionContainer>
         <HeroSection />
+      </SectionContainer>
+      <SectionContainer title='Technical Skills' Icon={CodeIcon}>
+        <SkillsSection />
       </SectionContainer>
       <SectionContainer title='Work Experience' Icon={BriefcaseIcon}>
         <WorkExperienceSection />

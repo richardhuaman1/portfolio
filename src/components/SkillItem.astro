@@ -1,0 +1,27 @@
+---
+import DotIcon from './icons/DotIcon.astro';
+import Chip from './ui/Chip.astro';
+import Typography from './ui/Typography.astro';
+import type { Technologies } from '@/types/skills.types';
+
+interface Props {
+  title: string;
+  technologies: Technologies[];
+}
+
+const { technologies, title } = Astro.props;
+---
+
+<div class='md:inline-flex'>
+  <div class='flex items-center justify-start md:mb-0 mb-1'>
+    <DotIcon class:list='size-10 text-gray-700 dark:text-white' />
+    <Typography as='p' size='2xl' class='font-medium lg:whitespace-nowrap md:min-w-[20rem]'
+      >{title}:</Typography
+    >
+  </div>
+  <div class='lg:ml-4 md:ml-3 ml-[40px]'>
+    <div class='flex items-center justify-start gap-2 h-full flex-wrap'>
+      {technologies.map((t) => <Chip color={t.color}>{t.name}</Chip>)}
+    </div>
+  </div>
+</div>
