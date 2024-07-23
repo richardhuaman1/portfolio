@@ -1,14 +1,12 @@
 ---
 import Container from '@/components/Container.astro';
-import Logo from '@/components/Logo.astro';
 import ThemeToggle from '@/components/ThemeToggle.astro';
 ---
 
 <header class='sticky top-0 z-50 bg-white/50 backdrop-blur-lg dark:bg-deep-dark/50'>
-  <Container class='flex items-center justify-between py-4'>
-    <Logo />
-    <ul class='hidden lg:flex'>
-      <li>
+  <Container class='flex items-center justify-end md:justify-center py-4'>
+    <ul class='flex'>
+      <li class='hidden md:flex'>
         <div
           class={`flex items-center justify-center px-4 py-3 cursor-pointer ${
             true
@@ -19,7 +17,18 @@ import ThemeToggle from '@/components/ThemeToggle.astro';
           Home
         </div>
       </li>
-      <li>
+      <li class='hidden md:flex'>
+        <div
+          class={`flex items-center justify-center px-4 py-3 cursor-pointer ${
+            false
+              ? 'font-semibold text-primary dark:text-primary-500'
+              : 'font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
+          }`}
+        >
+          Skills
+        </div>
+      </li>
+      <li class='hidden md:flex'>
         <div
           class={`flex items-center justify-center px-4 py-3 cursor-pointer ${
             false
@@ -30,7 +39,7 @@ import ThemeToggle from '@/components/ThemeToggle.astro';
           Experience
         </div>
       </li>
-      <li>
+      <li class='hidden md:flex'>
         <div
           class={`flex items-center justify-center px-4 py-3 cursor-pointer ${
             false
@@ -41,19 +50,11 @@ import ThemeToggle from '@/components/ThemeToggle.astro';
           Projects
         </div>
       </li>
+
       <li>
-        <div
-          class={`flex items-center justify-center px-4 py-3 cursor-pointer ${
-            false
-              ? 'font-semibold text-primary dark:text-primary-500'
-              : 'font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
-          }`}
-        >
-          Contact
-        </div>
+        <ThemeToggle />
       </li>
     </ul>
     <!--     <MenuDropdown /> -->
-    <ThemeToggle />
   </Container>
 </header>
