@@ -9,7 +9,7 @@ import ThemeToggle from '@/components/ThemeToggle.astro';
     <Logo />
     <ul class='hidden lg:flex'>
       <li>
-        <a
+        <div
           class={`flex items-center justify-center px-4 py-3 cursor-pointer ${
             true
               ? 'font-semibold text-primary dark:text-primary-500'
@@ -17,10 +17,10 @@ import ThemeToggle from '@/components/ThemeToggle.astro';
           }`}
         >
           Home
-        </a>
+        </div>
       </li>
       <li>
-        <a
+        <div
           class={`flex items-center justify-center px-4 py-3 cursor-pointer ${
             false
               ? 'font-semibold text-primary dark:text-primary-500'
@@ -28,10 +28,10 @@ import ThemeToggle from '@/components/ThemeToggle.astro';
           }`}
         >
           Experience
-        </a>
+        </div>
       </li>
       <li>
-        <a
+        <div
           class={`flex items-center justify-center px-4 py-3 cursor-pointer ${
             false
               ? 'font-semibold text-primary dark:text-primary-500'
@@ -39,10 +39,10 @@ import ThemeToggle from '@/components/ThemeToggle.astro';
           }`}
         >
           Projects
-        </a>
+        </div>
       </li>
       <li>
-        <a
+        <div
           class={`flex items-center justify-center px-4 py-3 cursor-pointer ${
             false
               ? 'font-semibold text-primary dark:text-primary-500'
@@ -50,7 +50,7 @@ import ThemeToggle from '@/components/ThemeToggle.astro';
           }`}
         >
           Contact
-        </a>
+        </div>
       </li>
     </ul>
     <!--     <MenuDropdown /> -->
