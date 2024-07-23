@@ -12,10 +12,10 @@ interface Props {
 const { description, title, subTitle } = Astro.props;
 ---
 
-<div class='relative pb-5 md:col-span-2'>
+<div class='relative pb-5 md:col-span-2 !m-0 !p-0'>
   <div class='sticky top-28'>
     <CircleIcon
-      class:list='absolute left-[-38px] rounded-full bg-background dark:text-gray-500 md:left-[-50px]'
+      class:list='absolute left-[-38px] rounded-full bg-background text-gray-800 dark:text-gray-500 md:left-[-50px]'
     />
     <Typography as='p' size='xl' color='primary' class='font-semibold'>
       {title}

@@ -22,7 +22,7 @@ const { image, title, description, technologies, previewUrl, repositoryUrl } = A
   <div class='mx-auto flex flex-col gap-4 lg:flex-row lg:gap-8'>
     {/* Image container */}
     <div class='flex-1'>
-      <div style={{ aspectRatio: '70/45' }}>
+      <div class='overflow-hidden' style={{ aspectRatio: '70/45' }}>
         <img
           alt={title}
           class='object-cover shadow-2xl transition duration-500 lg:hover:scale-105 rounded-xl border-[1px] border-gray-100 dark:border-gray-800 hover:border-gray-200'
