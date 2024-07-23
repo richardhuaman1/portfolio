@@ -23,6 +23,7 @@ const { image, title, description, technologies, previewUrl, repositoryUrl } = A
   <div class='flex-1'>
     <div class='overflow-hidden' style={{ aspectRatio: '70/45' }}>
       <img
+        loading='lazy'
         alt={title}
         class='object-cover shadow-2xl transition duration-500 lg:hover:scale-105 rounded-xl border-[1px] border-gray-100 dark:border-gray-800 hover:border-gray-200'
         src={image}
