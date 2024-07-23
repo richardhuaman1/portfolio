@@ -14,8 +14,11 @@ const { technologies, title } = Astro.props;
 
 <div class='md:inline-flex'>
   <div class='flex items-center justify-start md:mb-0 mb-1'>
-    <DotIcon class:list='size-10 text-gray-700 dark:text-white' />
-    <Typography as='p' size='2xl' class='font-medium lg:whitespace-nowrap md:min-w-[20rem]'
+    <DotIcon class:list='size-10 text-gray-800 dark:text-gray-200' />
+    <Typography
+      as='p'
+      size='2xl'
+      class='dark:text-gray-200 text-gray-800 font-medium lg:whitespace-nowrap md:min-w-[20rem]'
       >{title}:</Typography
     >
   </div>
