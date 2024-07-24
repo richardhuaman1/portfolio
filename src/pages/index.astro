@@ -8,6 +8,7 @@ import WorkExperienceSection from '@/components/sections/WorkExperienceSection.a
 import ProjectsSection from '@/components/sections/ProjectsSection.astro';
 import SkillsSection from '@/components/sections/SkillsSection.astro';
 import { sectionOptions } from '@/constants/section-ids';
+import SkillIcon from '@/components/icons/SkillIcon.astro';
 ---
 
 <Layout
@@ -22,7 +23,7 @@ import { sectionOptions } from '@/constants/section-ids';
     <SectionContainer
       id={sectionOptions.skills}
       title='Technical Skills'
-      Icon={CodeIcon}
+      Icon={SkillIcon}
       class:list='py-[72px] lg:py-20'
     >
       <SkillsSection />
