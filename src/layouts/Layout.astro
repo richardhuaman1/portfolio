@@ -3,8 +3,8 @@ import '@fontsource-variable/dm-sans';
 
 import Seo from '@/components/Seo.astro';
 import { ViewTransitions } from 'astro:transitions';
-import Footer from './Footer.astro';
-import Navbar from './Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
 import GoTop from '@/components/GoTop.astro';
 
 interface Props {
@@ -23,49 +23,19 @@ const { title, description, canonical, image } = Astro.props;
     <Seo canonical={canonical} description={description} image={image} title={title} />
     <ViewTransitions />
   </head>
-  <body>
-    <div id='main-content' class='min-h-screen dark:bg-deep-dark w-full bg-white relative'>
-      <Navbar />
+  <body id='main-content' class='min-h-screen dark:bg-deep-dark w-full bg-white relative'>
+    <Navbar />
+    <main>
       <slot />
-      <Footer />
-      <img
-        src='/images/rays.png'
-        class='absolute -top-36 right-0 md:left-1/2 md:-translate-x-1/2'
-        width={400}
-        height={400}
-        alt='Rays background'
-      />
-      <GoTop />
-    </div>
-    <style is:global>
-      :root {
-        color-scheme: light dark;
-      }
-
-      body {
-        color: rgba(17, 17, 17, 0.9);
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        overscroll-behavior: none;
-      }
-
-      html {
-        font-family: 'DM Sans Variable';
-        scroll-behavior: smooth;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-      }
-
-      @media (prefers-color-scheme: dark) {
-        body {
-          color: rgba(255, 255, 255, 0.9);
-        }
-      }
-    </style>
+    </main>
+    <Footer />
+    <img
+      src='/images/rays.png'
+      class='absolute -top-36 right-0 md:left-1/2 md:-translate-x-1/2'
+      width={400}
+      height={400}
+      alt='Rays background'
+    />
+    <GoTop />
   </body>
 </html>

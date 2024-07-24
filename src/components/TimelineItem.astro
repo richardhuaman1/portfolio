@@ -1,12 +1,29 @@
 ---
-import TimelineLeftSide from './TimelineLeftSide.astro';
-import TimelineRightSide from './TimelineRightSide.astro';
-import type { Timeline } from '../types/timeline.types';
+import type { Timeline } from '@/utilities/types';
+import CircleIcon from './icons/CircleIcon.astro';
+import Typography from './ui/Typography.astro';
 
 type Props = Timeline;
+
+const { description, subTitle, title } = Astro.props;
 ---
 
-<TimelineLeftSide {...Astro.props} />
-<TimelineRightSide>
+<div class='relative pb-5 md:col-span-2 !m-0 !p-0'>
+  <div class='sticky top-28'>
+    <CircleIcon
+      class:list='absolute left-[-38px] rounded-full bg-background text-gray-400 dark:text-gray-600 md:left-[-50px]'
+    />
+    <Typography as='p' size='xl' color='primary' class='font-semibold'>
+      {title}
+    </Typography>
+    <Typography as='p' size='xl' class='font-medium'>
+      {subTitle}
+    </Typography>
+    <Typography as='p' size='md' color='light'>
+      {description}
+    </Typography>
+  </div>
+</div>
+<div class='relative pb-4 md:col-span-3'>
   <slot />
-</TimelineRightSide>
+</div>

@@ -1,18 +1,19 @@
 ---
 import TimelineItem from '../TimelineItem.astro';
-import TimelineWrapper from '../TimelineWrapper.astro';
 import { envConfig } from '@/config/env';
 import Typography from '../ui/Typography.astro';
 ---
 
-<TimelineWrapper>
+<article
+  class="relative mx-9 grid pb-12 before:absolute before:left-[-25px] before:block before:h-full before:border-l-2 before:border-gray-300 before:content-[''] dark:before:border-gray-600 md:mx-12 md:grid-cols-5 md:gap-10 md:space-x-4 md:before:left-[-37px]"
+>
   <TimelineItem
     title='EPS. Ilo'
     subTitle='Software Engineer'
     description='Aug. 2023 to Present'
     image={envConfig().appUrl + '/images/eps-ilo.png'}
   >
-    <div>
+    <div class='lg:mt-0 mt-3'>
       <Typography size='md' as='p' color='light'>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis voluptatibus quod
         asperiores accusamus a iste ipsa. Architecto reiciendis dicta magni, recusandae pariatur
@@ -26,7 +27,7 @@ import Typography from '../ui/Typography.astro';
     description='June. 2022 to Aug. 2023'
     image={envConfig().appUrl + '/images/stomarx.svg'}
   >
-    <div>
+    <div class='lg:mt-0 mt-3'>
       <Typography size='md' as='p' color='light'>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis voluptatibus quod
         asperiores accusamus a iste ipsa. Architecto reiciendis dicta magni, recusandae pariatur
@@ -40,7 +41,7 @@ import Typography from '../ui/Typography.astro';
     description='Nov. 2021 to Jun. 2022'
     image={envConfig().appUrl + '/images/fairdent.svg'}
   >
-    <div>
+    <div class='lg:mt-0 mt-3'>
       <Typography size='md' as='p' color='light'>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis voluptatibus quod
         asperiores accusamus a iste ipsa. Architecto reiciendis dicta magni, recusandae pariatur
@@ -48,4 +49,4 @@ import Typography from '../ui/Typography.astro';
       </Typography>
     </div>
   </TimelineItem>
-</TimelineWrapper>
+</article>

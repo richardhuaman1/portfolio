@@ -1,8 +1,6 @@
 ---
-import { sectionOptions } from '@/constants/section-ids';
 import MobileMenuIcon from './icons/MobileMenuIcon.astro';
-
-const sectionCollection = Object.values(sectionOptions);
+import { SECTION_KEYS, SECTIONS } from '@/utilities/constants';
 ---
 
 <div class='relative md:hidden' id='dropdown-container'>
@@ -17,16 +15,20 @@ const sectionCollection = Object.values(sectionOptions);
   >
     <div class='py-1' role='menu' aria-orientation='vertical' aria-labelledby='dropdown-button'>
       {
-        sectionCollection.map((option, index) => (
-          <a
-            href={index === 0 ? '#' : `#${sectionCollection[index]}`}
-            class='block px-4 py-2 text-gray-700 dark:text-white active:dark:bg-gray-700 active:bg-gray-200'
-            role='menuitem'
-            data-target-id={index === 0 ? '' : sectionCollection[index]}
-          >
-            {option}
-          </a>
-        ))
+        SECTION_KEYS.map((option, index) => {
+          return (
+            <a
+              href={index === 0 ? '#' : `#${SECTIONS[index as unknown as keyof typeof SECTIONS]}`}
+              class='block px-4 py-2 text-gray-700 dark:text-white active:dark:bg-gray-700 active:bg-gray-200'
+              role='menuitem'
+              data-target-id={
+                index === 0 ? '' : SECTIONS[index as unknown as keyof typeof SECTIONS]
+              }
+            >
+              {option}
+            </a>
+          );
+        })
       }
     </div>
   </div>

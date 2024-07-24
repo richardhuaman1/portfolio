@@ -2,7 +2,7 @@
 import GitHubIcon from './icons/GitHubIcon.astro';
 import Typography from './ui/Typography.astro';
 import LinkButton from './ui/LinkButton.astro';
-import type { TechnologyTag } from '@/types/tags';
+import type { TechnologyTag } from '@/utilities/types';
 import LinkIcon from './icons/LinkIcon.astro';
 import Chip from './ui/Chip.astro';
 
@@ -19,7 +19,7 @@ const { image, title, description, technologies, previewUrl, repositoryUrl } = A
 ---
 
 <div class='mx-auto flex flex-col gap-4 lg:flex-row lg:gap-8'>
-  {/* Image container */}
+  <!--   Image container  -->
   <div class='flex-1'>
     <div class='overflow-hidden' style={{ aspectRatio: '70/45' }}>
       <img
@@ -31,7 +31,7 @@ const { image, title, description, technologies, previewUrl, repositoryUrl } = A
       />
     </div>
   </div>
-  {/* Description container */}
+  <!--   Description container  -->
   <div class='flex-1'>
     <div class='space-y-3'>
       <Typography as='p' size='2xl' class='font-semibold'>
@@ -41,11 +41,7 @@ const { image, title, description, technologies, previewUrl, repositoryUrl } = A
       <div>
         <Typography as='p' size='lg' class='font-semibold'> Technologies </Typography>
         <div class='mt-2 flex flex-wrap gap-2'>
-          {
-            technologies.map((tech) => {
-              return <Chip color={tech.color}>{tech.name}</Chip>;
-            })
-          }
+          {technologies.map((tech) => <Chip color={tech.color}>{tech.name}</Chip>)}
         </div>
       </div>
       <div class='space-x-3 pt-2'>
