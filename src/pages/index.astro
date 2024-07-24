@@ -10,9 +10,10 @@ import SkillsSection from '@/components/sections/SkillsSection.astro';
 import { SECTIONS } from '@/utilities/constants';
 import SkillIcon from '@/components/icons/SkillIcon.astro';
 import { me } from '@/data/me';
+import { envConfig } from '@/config/env';
 ---
 
-<Layout title={me.name} description={me.about}>
+<Layout title={me.name} description={me.about} canonical={envConfig().appUrl}>
   <h1 hidden aria-hidden='true'>{me.name}</h1>
   <SectionContainer id={SECTIONS.home} disablePadding>
     <HeroSection />

@@ -16,7 +16,9 @@ const {
 } = Astro.props as Props;
 
 const determineCanonicalURL = () => {
-  if (Astro.url.host.includes('localhost')) return 'http://localhost:4321';
+  const localhost = 'http://localhost:4321';
+
+  if (Astro.url.host.includes('localhost')) return localhost;
   return canonical || Astro.url.pathname;
 };
 
