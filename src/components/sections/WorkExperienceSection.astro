@@ -1,0 +1,51 @@
+---
+import TimelineItem from '../TimelineItem.astro';
+import TimelineWrapper from '../TimelineWrapper.astro';
+import { envConfig } from '@/config/env';
+import Typography from '../ui/Typography.astro';
+---
+
+<TimelineWrapper>
+  <TimelineItem
+    title='EPS. Ilo'
+    subTitle='Software Engineer'
+    description='Aug. 2023 to Present'
+    image={envConfig().appUrl + '/images/eps-ilo.png'}
+  >
+    <div>
+      <Typography size='md' as='p' color='light'>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis voluptatibus quod
+        asperiores accusamus a iste ipsa. Architecto reiciendis dicta magni, recusandae pariatur
+        perspiciatis ad, fuga ea fugiat cupiditate inventore distinctio.
+      </Typography>
+    </div>
+  </TimelineItem>
+  <TimelineItem
+    title='Stomarx'
+    subTitle='FullStack Developer'
+    description='June. 2022 to Aug. 2023'
+    image={envConfig().appUrl + '/images/stomarx.svg'}
+  >
+    <div>
+      <Typography size='md' as='p' color='light'>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis voluptatibus quod
+        asperiores accusamus a iste ipsa. Architecto reiciendis dicta magni, recusandae pariatur
+        perspiciatis ad, fuga ea fugiat cupiditate inventore distinctio.
+      </Typography>
+    </div>
+  </TimelineItem>
+  <TimelineItem
+    title='Fairdent'
+    subTitle='Software Developer'
+    description='Nov. 2021 to Jun. 2022'
+    image={envConfig().appUrl + '/images/fairdent.svg'}
+  >
+    <div>
+      <Typography size='md' as='p' color='light'>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis voluptatibus quod
+        asperiores accusamus a iste ipsa. Architecto reiciendis dicta magni, recusandae pariatur
+        perspiciatis ad, fuga ea fugiat cupiditate inventore distinctio.
+      </Typography>
+    </div>
+  </TimelineItem>
+</TimelineWrapper>

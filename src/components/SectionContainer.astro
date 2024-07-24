@@ -1,0 +1,35 @@
+---
+import Container from './Container.astro';
+import Typography from './ui/Typography.astro';
+
+type BaseProps =
+  | {
+      title: string;
+      Icon: any;
+    }
+  | {
+      title?: string;
+    };
+
+type Props = BaseProps & {
+  id: string;
+};
+
+const props = Astro.props;
+---
+
+<div {...Astro.props}>
+  <Container>
+    {
+      props.title && 'Icon' in props && (
+        <div class='flex items-center justify-start gap-3 mb-5'>
+          <props.Icon class:list='size-9 text-black dark:text-white' />
+          <Typography as='h2' size='3xl' class='font-medium'>
+            {props.title}
+          </Typography>
+        </div>
+      )
+    }
+    <slot />
+  </Container>
+</div>

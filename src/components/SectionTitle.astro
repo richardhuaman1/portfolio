@@ -1,0 +1,19 @@
+---
+import Typography from './ui/Typography.astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class='mx-auto max-w-3xl'>
+  <Typography as='h2' size='xl' class='max-xs:!leading-9'>
+    {title}
+  </Typography>
+  <Typography as='p' size='md' class='mx-auto mb-4 max-w-md md:max-w-xl lg:max-w-2xl'>
+    {description}
+  </Typography>
+</div>

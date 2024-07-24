@@ -1,0 +1,48 @@
+---
+import GoUpIcon from './icons/GoUpIcon.astro';
+---
+
+<button
+  id='go-top'
+  class='fixed bottom-4 right-4 bg-primary-600 text-white p-3 rounded-full shadow-lg hover:bg-primary-700 transition duration-300 ease-in-out hidden'
+  aria-label='Go to top'
+>
+  <GoUpIcon />
+</button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const goTopButton = document.getElementById('go-top');
+
+    // Function to scroll to top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Show/Hide button based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        // Adjust as needed
+        goTopButton?.classList.remove('hidden');
+      } else {
+        goTopButton?.classList.add('hidden');
+      }
+    });
+
+    // Add click event to the button
+    goTopButton?.addEventListener('click', scrollToTop);
+  });
+</script>
+
+<style>
+  #go-top {
+    /* Basic styling for the button */
+    display: none;
+  }
+  #go-top.hidden {
+    display: none;
+  }
+  #go-top:not(.hidden) {
+    display: block;
+  }
+</style>

@@ -1,0 +1,88 @@
+---
+import { sectionOptions } from '@/constants/section-ids';
+import MobileMenuIcon from './icons/MobileMenuIcon.astro';
+
+const sectionCollection = Object.values(sectionOptions);
+---
+
+<div class='relative md:hidden' id='dropdown-container'>
+  <div class='flex items-center justify-center h-full'>
+    <button aria-label='Dropdown menu' id='dropdown-button' class='h-10 w-auto p-1.5'>
+      <MobileMenuIcon class:list='size-9 dark:text-white text-gray-700' />
+    </button>
+  </div>
+  <div
+    class='dropdown-menu origin-top-right absolute right-0 mt-2 w-44 shadow-lg bg-white dark:bg-gray-900 rounded-lg ring-1 dark:ring-gray-800 ring-gray-200 ring-opacity-5 focus:outline-none'
+    id='dropdown-menu'
+  >
+    <div class='py-1' role='menu' aria-orientation='vertical' aria-labelledby='dropdown-button'>
+      {
+        sectionCollection.map((option, index) => (
+          <a
+            href={index === 0 ? '#' : `#${sectionCollection[index]}`}
+            class='block px-4 py-2 text-gray-700 dark:text-white active:dark:bg-gray-700 active:bg-gray-200'
+            role='menuitem'
+            data-target-id={index === 0 ? '' : sectionCollection[index]}
+          >
+            {option}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  <script>
+    const dropdownButton = document.getElementById('dropdown-button');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const dropdownContainer = document.getElementById('dropdown-container');
+
+    dropdownButton?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      dropdownMenu?.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!dropdownContainer?.contains(event.target as any)) {
+        dropdownMenu?.classList.remove('show');
+      }
+    });
+
+    const navLinks = document.querySelectorAll('.dropdown-menu a');
+
+    // Apply the active class to the first link on page load
+    if (navLinks.length > 0) {
+      navLinks[0].classList.add('!text-primary');
+    }
+
+    navLinks.forEach((option, index) => {
+      option.addEventListener('click', (event) => {
+        event.preventDefault();
+        dropdownMenu?.classList.remove('show');
+        if (index === 0) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const targetId = option.getAttribute('data-target-id');
+          if (targetId) {
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        }
+
+        // Remove the active class from all links
+        navLinks.forEach((link) => link.classList.remove('!text-primary'));
+        // Add the active class to the clicked link
+        option.classList.add('!text-primary');
+      });
+    });
+  </script>
+  <style>
+    .dropdown-menu {
+      display: none;
+    }
+    .dropdown-menu.show {
+      display: block;
+    }
+  </style>
+</div>

@@ -1,0 +1,90 @@
+---
+import Container from '@/components/Container.astro';
+import MenuDropdown from '@/components/MenuDropdown.astro';
+import ThemeToggle from '@/components/ThemeToggle.astro';
+import { sectionOptions } from '@/constants/section-ids';
+---
+
+<header class='sticky top-0 z-50 bg-white/50 backdrop-blur-lg dark:bg-deep-dark/50'>
+  <Container class='flex items-center justify-end md:justify-center py-4'>
+    <ul class='flex md:gap-4 gap-2 lg:gap-6'>
+      <li class='hidden md:flex'>
+        <a
+          href='#'
+          role='menuitem'
+          data-target-id=''
+          class='home-link flex items-center justify-center font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
+        >
+          Home
+        </a>
+      </li>
+      <li class='hidden md:flex'>
+        <a
+          href={`#${sectionOptions.skills}`}
+          role='menuitem'
+          data-target-id={sectionOptions.skills}
+          class='flex items-center justify-center font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
+        >
+          Skills
+        </a>
+      </li>
+      <li class='hidden md:flex'>
+        <a
+          href={`#${sectionOptions.experience}`}
+          role='menuitem'
+          data-target-id={sectionOptions.experience}
+          class='flex items-center justify-center font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
+        >
+          Experience
+        </a>
+      </li>
+      <li class='hidden md:flex'>
+        <a
+          href={`#${sectionOptions.projects}`}
+          role='menuitem'
+          data-target-id={sectionOptions.projects}
+          class='flex items-center justify-center font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
+        >
+          Projects
+        </a>
+      </li>
+      <li>
+        <ThemeToggle />
+      </li>
+      <li>
+        <MenuDropdown />
+      </li>
+    </ul>
+  </Container>
+</header>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('a[data-target-id]');
+
+    // Apply the active class to the first link on page load
+    if (navLinks.length > 0) {
+      navLinks[0].classList.add('!text-primary');
+    }
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const targetId = link.getAttribute('data-target-id');
+        if (targetId === '') {
+          event.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const targetElement = document.getElementById(targetId || '');
+          if (targetElement) {
+            event.preventDefault();
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+
+        // Remove the active class from all links
+        navLinks.forEach((link) => link.classList.remove('!text-primary'));
+        // Add the active class to the clicked link
+        link.classList.add('!text-primary');
+      });
+    });
+  });
+</script>

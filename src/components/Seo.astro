@@ -6,7 +6,12 @@ interface Props {
   image?: string;
 }
 
-const { title, description, canonical, image = 'https://cdn.lavelada.dev/og.jpg' } = Astro.props as Props;
+const {
+  title,
+  description,
+  canonical,
+  image = 'https://cdn.richardhuaman.dev/og.jpg',
+} = Astro.props as Props;
 
 const determineCanonicalURL = () => {
   if (Astro.url.host.includes('localhost')) return 'http://localhost:4321';
@@ -44,11 +49,11 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
 <meta name='robots' content='index, follow' />
 <meta name='googlebot' content='index, follow' />
 
-<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-<link rel='apple-touch-icon' href='/img/icons/apple-touch-icon.png' />
+<link rel='icon' type='image/svg+xml' href='/favicon.ico' />
+<!-- <link rel='apple-touch-icon' href='/img/icons/apple-touch-icon.png' /> -->
 
-<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-<meta name='msapplication-config' content='/browserconfig.xml' />
+<link rel='icon' type='image/svg+xml' href='/favicon.ico' />
+<!-- <meta name='msapplication-config' content='/browserconfig.xml' /> -->
 
-<script is:inline src='/registerSW.js'></script>
-<link rel='manifest' href='/manifest.webmanifest' />
+<!-- <script is:inline src='/registerSW.js'></script> -->
+<!-- <link rel='manifest' href='/manifest.webmanifest' /> -->

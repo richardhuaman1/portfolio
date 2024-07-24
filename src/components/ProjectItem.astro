@@ -1,0 +1,71 @@
+---
+import GitHubIcon from './icons/GitHubIcon.astro';
+import Typography from './ui/Typography.astro';
+import LinkButton from './ui/LinkButton.astro';
+import type { TechnologyTag } from '@/types/tags';
+import LinkIcon from './icons/LinkIcon.astro';
+import Chip from './ui/Chip.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  technologies: TechnologyTag[];
+  repositoryUrl: string | null;
+  previewUrl: string | null;
+}
+
+const { image, title, description, technologies, previewUrl, repositoryUrl } = Astro.props;
+---
+
+<div class='mx-auto flex flex-col gap-4 lg:flex-row lg:gap-8'>
+  {/* Image container */}
+  <div class='flex-1'>
+    <div class='overflow-hidden' style={{ aspectRatio: '70/45' }}>
+      <img
+        loading='lazy'
+        alt={title}
+        class='object-cover shadow-2xl transition duration-500 lg:hover:scale-105 rounded-xl border-[1px] border-gray-100 dark:border-gray-800 hover:border-gray-200'
+        src={image}
+        sizes='(max-width: 768px) 100vh, 700px'
+      />
+    </div>
+  </div>
+  {/* Description container */}
+  <div class='flex-1'>
+    <div class='space-y-3'>
+      <Typography as='p' size='2xl' class='font-semibold'>
+        {title}
+      </Typography>
+      <Typography as='p' size='md' color='light'>{description}</Typography>
+      <div>
+        <Typography as='p' size='lg' class='font-semibold'> Technologies </Typography>
+        <div class='mt-2 flex flex-wrap gap-2'>
+          {
+            technologies.map((tech) => {
+              return <Chip color={tech.color}>{tech.name}</Chip>;
+            })
+          }
+        </div>
+      </div>
+      <div class='space-x-3 pt-2'>
+        {
+          repositoryUrl && (
+            <LinkButton href={repositoryUrl}>
+              <GitHubIcon />
+              Code
+            </LinkButton>
+          )
+        }
+        {
+          previewUrl && (
+            <LinkButton href={previewUrl}>
+              <LinkIcon />
+              Preview
+            </LinkButton>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</div>
