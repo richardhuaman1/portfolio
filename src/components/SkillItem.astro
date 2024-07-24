@@ -12,9 +12,7 @@ const { technologies, title } = Astro.props;
 ---
 
 <div>
-  <Typography as='p' size='2xl' class='dark:text-gray-200 text-gray-800 font-medium'
-    >{title}&nbsp;:</Typography
-  >
+  <Typography as='p' size='2xl' class='text-gray-200 font-medium'>{title}&nbsp;:</Typography>
   <div class='mt-2 flex items-center justify-start gap-2 h-full flex-wrap'>
     {technologies.map((t) => <Chip color={t.color}>{t.name}</Chip>)}
   </div>

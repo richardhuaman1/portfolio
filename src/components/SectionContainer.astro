@@ -1,11 +1,12 @@
 ---
 import Container from './Container.astro';
 import Typography from './ui/Typography.astro';
+import type { Icon } from '../utilities/types';
 
 type BaseProps =
   | {
       title: string;
-      Icon: any;
+      icon: Icon;
     }
   | {
       title?: string;
@@ -13,17 +14,18 @@ type BaseProps =
 
 type Props = BaseProps & {
   id: string;
+  disablePadding?: boolean;
 };
 
-const { id, ...restProps } = Astro.props;
+const { id, disablePadding = false, ...restProps } = Astro.props;
 ---
 
-<section id={id}>
+<section id={id} class={disablePadding ? '' : 'py-[72px] lg:py-20'}>
   <Container>
     {
-      restProps.title && 'Icon' in restProps && (
+      restProps.title && 'icon' in restProps && (
         <div class='flex items-center justify-start gap-3 mb-5'>
-          <restProps.Icon class:list='size-9 text-black dark:text-white' />
+          <restProps.icon class:list='size-9 text-white' />
           <Typography as='h2' size='3xl' class='font-medium'>
             {restProps.title}
           </Typography>

@@ -1,11 +1,10 @@
 ---
 import Container from '@/components/Container.astro';
 import MenuDropdown from '@/components/MenuDropdown.astro';
-import ThemeToggle from '@/components/ThemeToggle.astro';
 import { SECTIONS } from '@/utilities/constants';
 ---
 
-<header class='sticky top-0 z-50 bg-white/50 backdrop-blur-lg dark:bg-deep-dark/50'>
+<header class='sticky top-0 z-50 backdrop-blur-lg bg-dark/50'>
   <Container class='flex items-center justify-end md:justify-center py-4'>
     <ul class='flex md:gap-4 gap-2 lg:gap-6'>
       <li class='hidden md:flex'>
@@ -13,7 +12,7 @@ import { SECTIONS } from '@/utilities/constants';
           href='#'
           role='menuitem'
           data-target-id=''
-          class='home-link flex items-center justify-center font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
+          class='home-link py-2 flex items-center justify-center font-medium transition duration-300 ease-in-out text-white hover:text-primary-500'
         >
           Home
         </a>
@@ -23,7 +22,7 @@ import { SECTIONS } from '@/utilities/constants';
           href={`#${SECTIONS.skills}`}
           role='menuitem'
           data-target-id={SECTIONS.skills}
-          class='flex items-center justify-center font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
+          class='py-2 flex items-center justify-center font-medium transition duration-300 ease-in-out text-white hover:text-primary-500'
         >
           Skills
         </a>
@@ -33,7 +32,7 @@ import { SECTIONS } from '@/utilities/constants';
           href={`#${SECTIONS.experience}`}
           role='menuitem'
           data-target-id={SECTIONS.experience}
-          class='flex items-center justify-center font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
+          class='py-2 flex items-center justify-center font-medium transition duration-300 ease-in-out text-white hover:text-primary-500'
         >
           Experience
         </a>
@@ -43,13 +42,10 @@ import { SECTIONS } from '@/utilities/constants';
           href={`#${SECTIONS.projects}`}
           role='menuitem'
           data-target-id={SECTIONS.projects}
-          class='flex items-center justify-center font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
+          class='py-2 flex items-center justify-center font-medium transition duration-300 ease-in-out text-white hover:text-primary-500'
         >
           Projects
         </a>
-      </li>
-      <li>
-        <ThemeToggle />
       </li>
       <li>
         <MenuDropdown />
@@ -62,10 +58,10 @@ import { SECTIONS } from '@/utilities/constants';
     const navLinks = document.querySelectorAll('a[data-target-id]');
 
     // Apply the active class to the first link on page load
-    if (navLinks.length > 0) {
+    /*     if (navLinks.length > 0) {
       navLinks[0].classList.add('!text-primary');
     }
-
+ */
     navLinks.forEach((link) => {
       link.addEventListener('click', (event) => {
         const targetId = link.getAttribute('data-target-id');

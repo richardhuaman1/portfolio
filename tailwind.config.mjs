@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-  darkMode: 'class',
   theme: {
     container: {
       center: true,
@@ -52,28 +51,9 @@ export default {
           800: '#004d55',
           900: '#00272b',
           DEFAULT: '#00c1d5',
-          foreground: '#ffffff',
-        },
-        secondary: {
-          100: '#e0e0fc',
-          200: '#c1c2f9',
-          300: '#a1a3f7',
-          400: '#8285f4',
-          500: '#6366f1',
-          600: '#4f52c1',
-          700: '#3b3d91',
-          800: '#282960',
-          900: '#141430',
-          DEFAULT: '#6366f1',
-          foreground: '#ffffff',
         },
         dark: '#18181B',
         'deep-dark': 'rgb(9, 9, 11)',
-        'border-light': 'rgb(242, 244, 247)',
-      },
-      boxShadow: {
-        light: 'rgb(113 122 131 / 11%) 0px 7px 30px 0px',
-        regular: 'rgba(90, 114, 123, 0.11) 0px 7px 30px 0px',
       },
       keyframes: {
         wiggle: {

@@ -31,3 +31,5 @@ export type Timeline = {
   description: string;
   image: string;
 };
+
+export type Icon = (_props: Record<string, any>) => any;

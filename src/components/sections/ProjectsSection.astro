@@ -94,21 +94,17 @@ const projectsList: Project[] = [
 ];
 ---
 
-<div>
-  <div class='space-y-10'>
-    {
-      projectsList.map((project) => {
-        return (
-          <ProjectItem
-            description={project.description}
-            image={envConfig().appUrl + project.image}
-            technologies={project.technologies}
-            title={project.title}
-            previewUrl={project.previewUrl}
-            repositoryUrl={project.repositoryUrl}
-          />
-        );
-      })
-    }
-  </div>
+<div class='space-y-10'>
+  {
+    projectsList.map((project) => (
+      <ProjectItem
+        description={project.description}
+        image={envConfig().appUrl + project.image}
+        technologies={project.technologies}
+        title={project.title}
+        previewUrl={project.previewUrl}
+        repositoryUrl={project.repositoryUrl}
+      />
+    ))
+  }
 </div>

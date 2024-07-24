@@ -23,7 +23,7 @@ const { title, description, canonical, image } = Astro.props;
     <Seo canonical={canonical} description={description} image={image} title={title} />
     <ViewTransitions />
   </head>
-  <body id='main-content' class='min-h-screen dark:bg-deep-dark w-full bg-white relative'>
+  <body id='main-content' class='min-h-screen bg-dark w-full relative'>
     <Navbar />
     <main>
       <slot />
