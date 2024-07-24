@@ -6,6 +6,7 @@ import LinkedInIcon from '../icons/LinkedInIcon.astro';
 import GithubIcon from '../icons/GitHubIcon.astro';
 import SocialPill from '../SocialPill.astro';
 import { envConfig } from '@/config/env';
+import { me } from '@/data/me';
 
 const GITHUB_URL = envConfig().contact.github || '/';
 const LINKEDIN_URL = envConfig().contact.linkedin || '/';
@@ -17,7 +18,7 @@ const CONTACT_EMAIL = envConfig().contact.email || 'example@gmail.com';
     <div class='flex-1 space-y-2'>
       <div>
         <Typography as='span' size='big-4' class='font-bold text-yellow-500'> Hello 👋 </Typography>
-        <Typography as='p' size='big-4' class='font-bold'>I'm Richard Huaman.</Typography>
+        <Typography as='p' size='big-4' class='font-bold'>I'm {me.name}.</Typography>
       </div>
       <div>
         <Typography as='p' size='lg' class='text-md md:text-[18px] lg:text-[20px] text-slate-300'>
@@ -43,7 +44,7 @@ const CONTACT_EMAIL = envConfig().contact.email || 'example@gmail.com';
       </div>
     </div>
     <div class='overflow-hidden rounded-full'>
-      <img src='/images/hero-avatar.webp' alt='Richard Huaman Avatar' width={325} height={325} />
+      <img src='/images/hero-avatar.webp' alt='My Avatar' width={325} height={325} />
     </div>
   </div>
   <div class='flex items-center justify-center'>

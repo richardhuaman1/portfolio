@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+
 interface Props {
   title: string;
   description: string;
@@ -45,7 +46,7 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
 <meta property='og:title' content={title} />
 <meta property='og:description' content={description} />
 <meta property='og:url' content={Astro.url} />
-<meta property='og:site_name' content='Richard Huaman' />
+<meta property='og:site_name' content={title} />
 <meta property='og:type' content='website' />
 <meta property='og:locale' content='en_EN' />
 

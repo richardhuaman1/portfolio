@@ -9,15 +9,11 @@ import ProjectsSection from '@/components/sections/ProjectsSection.astro';
 import SkillsSection from '@/components/sections/SkillsSection.astro';
 import { SECTIONS } from '@/utilities/constants';
 import SkillIcon from '@/components/icons/SkillIcon.astro';
-import { envConfig } from '@/config/env';
+import { me } from '@/data/me';
 ---
 
-<Layout
-  title='Richard Huaman'
-  description="Hi, I'm a software engineer with over 2 years of experience."
-  canonical={envConfig().appUrl}
->
-  <h1 hidden aria-hidden='true'>Richard Huaman</h1>
+<Layout title={me.name} description={me.about}>
+  <h1 hidden aria-hidden='true'>{me.name}</h1>
   <SectionContainer id={SECTIONS.home} disablePadding>
     <HeroSection />
   </SectionContainer>
