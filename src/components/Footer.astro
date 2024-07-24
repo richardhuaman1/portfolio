@@ -1,12 +1,13 @@
 ---
 import Container from '@/components/Container.astro';
 import Typography from '@/components/ui/Typography.astro';
+import { me } from '@/data/me';
 ---
 
-<footer class='mt-6'>
+<footer>
   <Container>
     <Typography as='p' size='lg' color='light' class='text-center py-3'>
-      © 2024 Richard Huaman
+      © 2024 {me.name}
     </Typography>
   </Container>
 </footer>

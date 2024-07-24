@@ -23,19 +23,12 @@ const { title, description, canonical, image } = Astro.props;
     <Seo canonical={canonical} description={description} image={image} title={title} />
     <ViewTransitions />
   </head>
-  <body id='main-content' class='min-h-screen dark:bg-deep-dark w-full bg-white relative'>
+  <body id='main-content' class='min-h-screen bg-dark w-full'>
     <Navbar />
     <main>
       <slot />
     </main>
     <Footer />
-    <img
-      src='/images/rays.png'
-      class='absolute -top-36 right-0 md:left-1/2 md:-translate-x-1/2'
-      width={400}
-      height={400}
-      alt='Rays background'
-    />
     <GoTop />
   </body>
 </html>

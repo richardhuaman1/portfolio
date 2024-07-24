@@ -9,40 +9,22 @@ import ProjectsSection from '@/components/sections/ProjectsSection.astro';
 import SkillsSection from '@/components/sections/SkillsSection.astro';
 import { SECTIONS } from '@/utilities/constants';
 import SkillIcon from '@/components/icons/SkillIcon.astro';
+import { me } from '@/data/me';
 import { envConfig } from '@/config/env';
 ---
 
-<Layout
-  title='Richard Huaman'
-  description="Hi, I'm a software engineer with over 2 years of experience."
-  canonical={envConfig().appUrl}
->
-  <h1 hidden aria-hidden='true'>'Richard Huaman'</h1>
-  <SectionContainer id={SECTIONS.home}>
+<Layout title={me.name} description={me.about} canonical={envConfig().appUrl}>
+  <h1 hidden aria-hidden='true'>{me.name}</h1>
+  <SectionContainer id={SECTIONS.home} disablePadding>
     <HeroSection />
   </SectionContainer>
-  <SectionContainer
-    id={SECTIONS.skills}
-    title='Technical Skills'
-    Icon={SkillIcon}
-    class:list='py-[72px] lg:py-20'
-  >
+  <SectionContainer id={SECTIONS.skills} title='Technical Skills' icon={SkillIcon}>
     <SkillsSection />
   </SectionContainer>
-  <SectionContainer
-    id={SECTIONS.experience}
-    title='Work Experience'
-    Icon={BriefcaseIcon}
-    class:list='py-[72px] lg:py-20'
-  >
+  <SectionContainer id={SECTIONS.experience} title='Work Experience' icon={BriefcaseIcon}>
     <WorkExperienceSection />
   </SectionContainer>
-  <SectionContainer
-    id={SECTIONS.projects}
-    title='Projects'
-    Icon={CodeIcon}
-    class:list='py-[72px] lg:py-20'
-  >
+  <SectionContainer id={SECTIONS.projects} title='Projects' icon={CodeIcon}>
     <ProjectsSection />
   </SectionContainer>
 </Layout>
