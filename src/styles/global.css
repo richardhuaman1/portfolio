@@ -1,0 +1,19 @@
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}

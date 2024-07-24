@@ -1,13 +1,9 @@
 ---
+import type { Technology } from '@/utilities/types';
 import SkillsIcon from '../icons/SkillsIcon.astro';
 import SkillItem from '../SkillItem.astro';
 
-type Technologies = {
-  name: string;
-  color: string;
-};
-
-const programmingLanguages: Technologies[] = [
+const programmingLanguages: Technology[] = [
   {
     name: 'Javascript',
     color: 'bg-yellow-500',
@@ -26,7 +22,7 @@ const programmingLanguages: Technologies[] = [
   },
 ];
 
-const technologies: Technologies[] = [
+const technologies: Technology[] = [
   {
     name: 'React',
     color: 'bg-sky-500',
@@ -53,7 +49,7 @@ const technologies: Technologies[] = [
   },
 ];
 
-const tools: Technologies[] = [
+const tools: Technology[] = [
   {
     name: 'Git',
     color: 'bg-orange-500',

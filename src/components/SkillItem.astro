@@ -1,11 +1,11 @@
 ---
 import Chip from './ui/Chip.astro';
 import Typography from './ui/Typography.astro';
-import type { Technologies } from '@/types/skills.types';
+import type { Technology } from '@/utilities/types';
 
 interface Props {
   title: string;
-  technologies: Technologies[];
+  technologies: Technology[];
 }
 
 const { technologies, title } = Astro.props;

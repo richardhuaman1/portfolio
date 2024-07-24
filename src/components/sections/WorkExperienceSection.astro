@@ -1,11 +1,12 @@
 ---
 import TimelineItem from '../TimelineItem.astro';
-import TimelineWrapper from '../TimelineWrapper.astro';
 import { envConfig } from '@/config/env';
 import Typography from '../ui/Typography.astro';
 ---
 
-<TimelineWrapper>
+<article
+  class="relative mx-9 grid pb-12 before:absolute before:left-[-25px] before:block before:h-full before:border-l-2 before:border-gray-300 before:content-[''] dark:before:border-gray-600 md:mx-12 md:grid-cols-5 md:gap-10 md:space-x-4 md:before:left-[-37px]"
+>
   <TimelineItem
     title='EPS. Ilo'
     subTitle='Software Engineer'
@@ -48,4 +49,4 @@ import Typography from '../ui/Typography.astro';
       </Typography>
     </div>
   </TimelineItem>
-</TimelineWrapper>
+</article>

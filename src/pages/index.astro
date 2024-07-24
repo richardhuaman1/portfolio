@@ -7,43 +7,42 @@ import HeroSection from '@/components/sections/HeroSection.astro';
 import WorkExperienceSection from '@/components/sections/WorkExperienceSection.astro';
 import ProjectsSection from '@/components/sections/ProjectsSection.astro';
 import SkillsSection from '@/components/sections/SkillsSection.astro';
-import { sectionOptions } from '@/constants/section-ids';
+import { SECTIONS } from '@/utilities/constants';
 import SkillIcon from '@/components/icons/SkillIcon.astro';
 import { envConfig } from '@/config/env';
 ---
 
 <Layout
-  title='Richard Huaman - Portfolio'
-  description='A software engineer specialized in software development.'
+  title='Richard Huaman'
+  description="Hi, I'm a software engineer with over 2 years of experience."
   canonical={envConfig().appUrl}
 >
-  <main>
-    <SectionContainer id={sectionOptions.home}>
-      <HeroSection />
-    </SectionContainer>
-    <SectionContainer
-      id={sectionOptions.skills}
-      title='Technical Skills'
-      Icon={SkillIcon}
-      class:list='py-[72px] lg:py-20'
-    >
-      <SkillsSection />
-    </SectionContainer>
-    <SectionContainer
-      id={sectionOptions.experience}
-      title='Work Experience'
-      Icon={BriefcaseIcon}
-      class:list='py-[72px] lg:py-20'
-    >
-      <WorkExperienceSection />
-    </SectionContainer>
-    <SectionContainer
-      id={sectionOptions.projects}
-      title='Projects'
-      Icon={CodeIcon}
-      class:list='py-[72px] lg:py-20'
-    >
-      <ProjectsSection />
-    </SectionContainer>
-  </main>
+  <h1 hidden aria-hidden='true'>'Richard Huaman'</h1>
+  <SectionContainer id={SECTIONS.home}>
+    <HeroSection />
+  </SectionContainer>
+  <SectionContainer
+    id={SECTIONS.skills}
+    title='Technical Skills'
+    Icon={SkillIcon}
+    class:list='py-[72px] lg:py-20'
+  >
+    <SkillsSection />
+  </SectionContainer>
+  <SectionContainer
+    id={SECTIONS.experience}
+    title='Work Experience'
+    Icon={BriefcaseIcon}
+    class:list='py-[72px] lg:py-20'
+  >
+    <WorkExperienceSection />
+  </SectionContainer>
+  <SectionContainer
+    id={SECTIONS.projects}
+    title='Projects'
+    Icon={CodeIcon}
+    class:list='py-[72px] lg:py-20'
+  >
+    <ProjectsSection />
+  </SectionContainer>
 </Layout>

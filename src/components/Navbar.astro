@@ -2,7 +2,7 @@
 import Container from '@/components/Container.astro';
 import MenuDropdown from '@/components/MenuDropdown.astro';
 import ThemeToggle from '@/components/ThemeToggle.astro';
-import { sectionOptions } from '@/constants/section-ids';
+import { SECTIONS } from '@/utilities/constants';
 ---
 
 <header class='sticky top-0 z-50 bg-white/50 backdrop-blur-lg dark:bg-deep-dark/50'>
@@ -20,9 +20,9 @@ import { sectionOptions } from '@/constants/section-ids';
       </li>
       <li class='hidden md:flex'>
         <a
-          href={`#${sectionOptions.skills}`}
+          href={`#${SECTIONS.skills}`}
           role='menuitem'
-          data-target-id={sectionOptions.skills}
+          data-target-id={SECTIONS.skills}
           class='flex items-center justify-center font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
         >
           Skills
@@ -30,9 +30,9 @@ import { sectionOptions } from '@/constants/section-ids';
       </li>
       <li class='hidden md:flex'>
         <a
-          href={`#${sectionOptions.experience}`}
+          href={`#${SECTIONS.experience}`}
           role='menuitem'
-          data-target-id={sectionOptions.experience}
+          data-target-id={SECTIONS.experience}
           class='flex items-center justify-center font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
         >
           Experience
@@ -40,9 +40,9 @@ import { sectionOptions } from '@/constants/section-ids';
       </li>
       <li class='hidden md:flex'>
         <a
-          href={`#${sectionOptions.projects}`}
+          href={`#${SECTIONS.projects}`}
           role='menuitem'
-          data-target-id={sectionOptions.projects}
+          data-target-id={SECTIONS.projects}
           class='flex items-center justify-center font-medium text-foreground transition duration-300 ease-in-out text-black dark:text-white hover:text-primary dark:hover:text-primary-500'
         >
           Projects
