@@ -3,7 +3,7 @@ export type Experience = {
   from: string;
   to: string;
   position: string;
-  logo: string;
+  description: string;
 };
 
 export type Project = {
@@ -18,6 +18,8 @@ export type Project = {
 export type Technology = {
   name: string;
   color: string;
+  image: string;
+  animation: 'wiggle' | 'spin';
 };
 
 export interface TechnologyTag {

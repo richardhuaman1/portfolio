@@ -1,0 +1,31 @@
+---
+import Typography from './ui/Typography.astro';
+
+interface Props {
+  title: string;
+  image: string;
+  animation: 'wiggle' | 'spin';
+}
+
+const { image, title, animation, ...restProps } = Astro.props;
+---
+
+<div {...restProps} class='rounded-xl h-[95px] w-[95px] group'>
+  <div class='h-[65%] flex items-center justify-center p-2'>
+    <img
+      src={image}
+      aria-label={title}
+      width='43'
+      height='43'
+      class={`${animation === 'spin' ? 'group-hover:animate-spin' : 'group-hover:animate-wiggle'}`}
+    />
+  </div>
+  <div class='h-[35%] flex items-center justify-center p-2'>
+    <Typography
+      as='p'
+      size='sm'
+      class:list='text-gray-300 group-hover:scale-105 group-hover:text-white text-center leading-4 ease-out transition-all duration-500'
+      >{title}
+    </Typography>
+  </div>
+</div>

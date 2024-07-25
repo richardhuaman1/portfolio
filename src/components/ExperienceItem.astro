@@ -1,0 +1,39 @@
+---
+import Typography from './ui/Typography.astro';
+
+interface Props {
+  title: string;
+  company: string;
+  description: string;
+  date: string;
+}
+
+const { title, company, description, date } = Astro.props;
+---
+
+<div
+  class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
+>
+  <div class='relative pb-6 md:col-span-2'>
+    <div class='sticky top-0'>
+      <span class='text-primary -left-[41.5px] absolute rounded-full text-5xl'>&bull;</span>
+      <Typography as='h3' size='2xl' color='primary' class='font-semibold'>
+        {title}
+      </Typography>
+      <Typography as='h4' size='xl' class='font-medium'>
+        {company}
+      </Typography>
+      <Typography as='p' size='md' color='dim'>
+        {date}
+      </Typography>
+    </div>
+  </div>
+  <Typography
+    as='p'
+    size='md'
+    color='light'
+    class='relative flex flex-col gap-2 pb-4 md:col-span-3'
+  >
+    {description}
+  </Typography>
+</div>

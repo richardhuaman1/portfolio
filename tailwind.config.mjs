@@ -55,6 +55,9 @@ export default {
         dark: '#18181B',
         'deep-dark': 'rgb(9, 9, 11)',
       },
+      boxShadow: {
+        card: 'rgba(90, 114, 123, 0.11) 0px 7px 30px 0px',
+      },
       keyframes: {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },

@@ -1,52 +1,46 @@
 ---
-import TimelineItem from '../TimelineItem.astro';
-import { envConfig } from '@/config/env';
-import Typography from '../ui/Typography.astro';
+import type { Experience } from '@/utilities/types';
+import ExperienceItem from '../ExperienceItem.astro';
+
+const experience: Experience[] = [
+  {
+    companyName: 'EPS. Ilo',
+    position: 'Software Engineer',
+    from: 'Aug, 2023',
+    to: 'Present',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita nobis illo culpa id dolores, dolorem tempora harum soluta necessitatibus voluptatum maxime temporibus labore ratione dignissimos quibusdam. Nostrum consectetur corporis aspernatur?',
+  },
+  {
+    companyName: 'EPS. Ilo',
+    position: 'Software Engineer',
+    from: 'Aug, 2023',
+    to: 'Present',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita nobis illo culpa id dolores, dolorem tempora harum soluta necessitatibus voluptatum maxime temporibus labore ratione dignissimos quibusdam. Nostrum consectetur corporis aspernatur?',
+  },
+  {
+    companyName: 'EPS. Ilo',
+    position: 'Software Engineer',
+    from: 'Aug, 2023',
+    to: 'Present',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita nobis illo culpa id dolores, dolorem tempora harum soluta necessitatibus voluptatum maxime temporibus labore ratione dignissimos quibusdam. Nostrum consectetur corporis aspernatur?',
+  },
+];
 ---
 
-<article
-  class="relative mx-9 grid pb-12 before:absolute before:left-[-25px] before:block before:h-full before:border-l-2 before:content-[''] before:border-gray-600 md:mx-12 md:grid-cols-5 md:gap-10 md:space-x-4 md:before:left-[-37px]"
->
-  <TimelineItem
-    title='EPS. Ilo'
-    subTitle='Software Engineer'
-    description='Aug. 2023 to Present'
-    image={envConfig().appUrl + '/images/eps-ilo.png'}
-  >
-    <div class='lg:mt-0 mt-3'>
-      <Typography size='md' as='p' color='light'>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis voluptatibus quod
-        asperiores accusamus a iste ipsa. Architecto reiciendis dicta magni, recusandae pariatur
-        perspiciatis ad, fuga ea fugiat cupiditate inventore distinctio.
-      </Typography>
-    </div>
-  </TimelineItem>
-  <TimelineItem
-    title='Stomarx'
-    subTitle='FullStack Developer'
-    description='June. 2022 to Aug. 2023'
-    image={envConfig().appUrl + '/images/stomarx.svg'}
-  >
-    <div class='lg:mt-0 mt-3'>
-      <Typography size='md' as='p' color='light'>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis voluptatibus quod
-        asperiores accusamus a iste ipsa. Architecto reiciendis dicta magni, recusandae pariatur
-        perspiciatis ad, fuga ea fugiat cupiditate inventore distinctio.
-      </Typography>
-    </div>
-  </TimelineItem>
-  <TimelineItem
-    title='Fairdent'
-    subTitle='Software Developer'
-    description='Nov. 2021 to Jun. 2022'
-    image={envConfig().appUrl + '/images/fairdent.svg'}
-  >
-    <div class='lg:mt-0 mt-3'>
-      <Typography size='md' as='p' color='light'>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis voluptatibus quod
-        asperiores accusamus a iste ipsa. Architecto reiciendis dicta magni, recusandae pariatur
-        perspiciatis ad, fuga ea fugiat cupiditate inventore distinctio.
-      </Typography>
-    </div>
-  </TimelineItem>
-</article>
+<ol>
+  {
+    experience.map((exp) => (
+      <li>
+        <ExperienceItem
+          title={exp.position}
+          company={exp.companyName}
+          date={`${exp.from} - ${exp.to}`}
+          description={exp.description}
+        />
+      </li>
+    ))
+  }
+</ol>
