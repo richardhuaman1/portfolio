@@ -1,77 +1,108 @@
 ---
 import type { Technology } from '@/utilities/types';
 import SkillsIcon from '../icons/SkillsIcon.astro';
-import SkillItem from '../SkillItem.astro';
+import TechnologyCard from '../TechnologyCard.astro';
+import { envConfig } from '@/config/env';
 
-const programmingLanguages: Technology[] = [
+const technologies: Technology[] = [
   {
     name: 'Javascript',
     color: 'bg-yellow-500',
+    image: '/images/technologies/javascript.svg',
+    animation: 'wiggle',
   },
   {
     name: 'Typescript',
     color: 'bg-blue-500',
+    image: '/images/technologies/typescript.svg',
+    animation: 'wiggle',
   },
   {
     name: 'Html',
     color: 'bg-orange-500',
+    image: '/images/technologies/html-5.svg',
+    animation: 'wiggle',
   },
   {
     name: 'Css',
     color: 'bg-blue-500',
+    image: '/images/technologies/css-3.svg',
+    animation: 'wiggle',
   },
-];
-
-const technologies: Technology[] = [
   {
-    name: 'React',
+    name: 'Tailwind Css',
     color: 'bg-sky-500',
+    image: '/images/technologies/tailwindcss.svg',
+    animation: 'wiggle',
   },
   {
-    name: 'Next',
+    name: 'React JS',
+    color: 'bg-sky-500',
+    image: '/images/technologies/react.svg',
+    animation: 'spin',
+  },
+  {
+    name: 'Next JS',
     color: 'bg-gray-600',
+    image: '/images/technologies/nextjs.svg',
+    animation: 'wiggle',
   },
   {
     name: 'Node',
     color: 'bg-green-500',
+    image: '/images/technologies/nodejs.svg',
+    animation: 'wiggle',
   },
   {
     name: 'Express',
     color: 'bg-gray-500',
+    image: '/images/technologies/express.svg',
+    animation: 'wiggle',
   },
   {
-    name: 'Nest',
+    name: 'Nest JS',
     color: 'bg-red-500',
+    image: '/images/technologies/nestjs.svg',
+    animation: 'wiggle',
   },
   {
     name: 'Linux',
     color: 'bg-gray-500',
+    image: '/images/technologies/linux.svg',
+    animation: 'wiggle',
   },
-];
-
-const tools: Technology[] = [
   {
     name: 'Git',
     color: 'bg-orange-500',
+    image: '/images/technologies/git.svg',
+    animation: 'wiggle',
   },
   {
     name: 'Github',
     color: 'bg-gray-600',
-  },
-  {
-    name: 'CI/CD',
-    color: 'bg-red-500',
+    image: '/images/technologies/github.svg',
+    animation: 'wiggle',
   },
 ];
 ---
 
 <div class='flex items-center justify-center flex-col lg:flex-row md:gap-4 lg:gap-6'>
   <div class='flex items-center justify-center'>
-    <SkillsIcon class:list='lg:w-[500px] h-auto md:w-[450px] hidden md:block md:p-3 p-0' />
+    <SkillsIcon class:list='lg:w-[460px] h-auto md:w-[450px] hidden md:block md:p-3 p-0' />
   </div>
-  <div class='space-y-5 w-full'>
-    <SkillItem title='Programming Languages' technologies={programmingLanguages} />
-    <SkillItem title='Technologies' technologies={technologies} />
-    <SkillItem title='Tools' technologies={tools} />
+  <div
+    class='grid lg:grid-cols-5 md:grid-cols-4 xs:grid-cols-3 grid-cols-2 w-full gap-0.5 lg:max-w-full md:max-w-md xs:max-w-sm max-w-full'
+  >
+    {
+      technologies.map((t) => (
+        <div class='col-span-1 mx-auto'>
+          <TechnologyCard
+            title={t.name}
+            image={envConfig().appUrl + t.image}
+            animation={t.animation}
+          />
+        </div>
+      ))
+    }
   </div>
 </div>

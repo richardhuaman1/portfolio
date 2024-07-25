@@ -18,6 +18,8 @@ export type Project = {
 export type Technology = {
   name: string;
   color: string;
+  image: string;
+  animation: 'wiggle' | 'spin';
 };
 
 export interface TechnologyTag {

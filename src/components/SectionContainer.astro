@@ -25,7 +25,7 @@ const { id, disablePadding = false, ...restProps } = Astro.props;
     {
       restProps.title && 'icon' in restProps && (
         <div class='flex items-center justify-start gap-3 mb-5'>
-          <restProps.icon class:list='size-9 text-white' />
+          <restProps.icon class:list='size-[34px] text-white' />
           <Typography as='h2' size='3xl' class='font-medium'>
             {restProps.title}
           </Typography>
