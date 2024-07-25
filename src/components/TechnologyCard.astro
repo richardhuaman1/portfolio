@@ -10,7 +10,7 @@ interface Props {
 const { image, title, animation, ...restProps } = Astro.props;
 ---
 
-<div {...restProps} class='rounded-xl h-[95px] w-[95px] group'>
+<div {...restProps} class='rounded-xl h-[95px] w-[95px]'>
   <div class='h-[65%] flex items-center justify-center p-2'>
     <img
       src={image}
