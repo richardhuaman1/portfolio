@@ -10,7 +10,7 @@ interface Props {
 const { image, title, animation, ...restProps } = Astro.props;
 ---
 
-<div {...restProps} class='rounded-xl h-[95px] w-[95px]'>
+<div {...restProps} class='rounded-xl h-[95px] w-[95px] group'>
   <div class='h-[65%] flex items-center justify-center p-2'>
     <img
       src={image}
@@ -24,7 +24,7 @@ const { image, title, animation, ...restProps } = Astro.props;
     <Typography
       as='p'
       size='sm'
-      class:list='text-gray-300 group-hover:scale-105 group-hover:text-white text-center leading-4 ease-out transition-all duration-500'
+      class:list='text-gray-300 group-hover:scale-105 group-hover:text-white text-center leading-4 ease-in-out transition-all'
       >{title}
     </Typography>
   </div>
