@@ -3,7 +3,7 @@ export type Experience = {
   from: string;
   to: string;
   position: string;
-  logo: string;
+  description: string;
 };
 
 export type Project = {
