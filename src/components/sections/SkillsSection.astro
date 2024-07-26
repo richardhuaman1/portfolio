@@ -2,7 +2,7 @@
 import type { Technology } from '@/utilities/types';
 import SkillsIcon from '../icons/SkillsIcon.astro';
 import TechnologyCard from '../TechnologyCard.astro';
-import { envConfig } from '@/config/env';
+import { EnvService } from '@/services/env.service';
 
 const technologies: Technology[] = [
   {
@@ -95,7 +95,7 @@ const technologies: Technology[] = [
         <div class='col-span-1 mx-auto'>
           <TechnologyCard
             title={t.name}
-            image={envConfig().appUrl + t.image}
+            image={EnvService.getClient() + t.image}
             animation={t.animation}
           />
         </div>

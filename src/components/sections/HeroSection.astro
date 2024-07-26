@@ -5,12 +5,12 @@ import MailIcon from '../icons/MailIcon.astro';
 import LinkedInIcon from '../icons/LinkedInIcon.astro';
 import GithubIcon from '../icons/GitHubIcon.astro';
 import SocialPill from '../SocialPill.astro';
-import { envConfig } from '@/config/env';
 import { me } from '@/data/me';
+import { EnvService } from '@/services/env.service';
 
-const GITHUB_URL = envConfig().contact.github || '/';
-const LINKEDIN_URL = envConfig().contact.linkedin || '/';
-const CONTACT_EMAIL = envConfig().contact.email || 'example@gmail.com';
+const GITHUB_URL = EnvService.getContact().github || '/';
+const LINKEDIN_URL = EnvService.getContact().linkedin || '/';
+const CONTACT_EMAIL = EnvService.getContact().email || 'example@gmail.com';
 ---
 
 <div class='space-y-8 pt-8 md:pt-12'>
