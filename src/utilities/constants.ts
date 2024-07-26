@@ -1,3 +1,8 @@
+export const LAYOUT_SIZES = {
+  navbar: 72,
+  footer: 52,
+};
+
 export const SECTIONS = {
   home: 'Home',
   skills: 'Skills',
