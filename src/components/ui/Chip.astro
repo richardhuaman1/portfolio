@@ -8,8 +8,8 @@ const { color, ...restProps } = Astro.props;
 
 <span
   {...restProps}
-  class='border-gray-400 px-3 text-[15px] py-0.5 border-[1px] rounded-2xl inline-flex items-center justify-start gap-2 text-gray-200'
+  class='border-gray-500 px-3.5 text-md py-1 border-2 rounded-full font-medium inline-flex items-center justify-start gap-2 text-gray-300'
 >
-  <div class={`w-2 h-2 ${color ? color : 'bg-primary'} rounded-full`}></div>
+  <div class={`w-2 h-2 ${color ? color : 'bg-gray-200'} rounded-full`}></div>
   <slot />
 </span>
