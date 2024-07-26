@@ -2,13 +2,13 @@
 import Container from '@/components/Container.astro';
 import MenuDropdown from '@/components/MenuDropdown.astro';
 import { SECTIONS } from '@/utilities/constants';
-import CodeIcon from './icons/CodeIcon.astro';
+import Logo from './Logo.astro';
 ---
 
 <header class='sticky top-0 z-50 backdrop-blur-lg bg-dark/50'>
   <Container class='flex items-center justify-end md:justify-center py-4 relative'>
-    <div class='absolute left-4 md:hidden flex text-white'>
-      <CodeIcon class:list='size-10' />
+    <div class='absolute left-4 md:hidden flex'>
+      <Logo />
     </div>
     <ul class='flex md:gap-4 gap-2 lg:gap-6'>
       <li class='hidden md:flex'>

@@ -2,7 +2,7 @@
 import type { Technology } from '@/utilities/types';
 import SkillsIcon from '../icons/SkillsIcon.astro';
 import TechnologyCard from '../TechnologyCard.astro';
-import { envConfig } from '@/config/env';
+import { EnvService } from '@/services/env.service';
 
 const technologies: Technology[] = [
   {
@@ -88,14 +88,14 @@ const technologies: Technology[] = [
     <SkillsIcon class:list='lg:w-[460px] h-auto md:w-[450px] hidden md:block md:p-3 p-0' />
   </div>
   <div
-    class='grid lg:grid-cols-5 md:grid-cols-4 xs:grid-cols-3 grid-cols-2 w-full gap-3 lg:gap-0.5 lg:max-w-full md:max-w-md xs:max-w-sm max-w-full'
+    class='grid lg:grid-cols-5 md:grid-cols-4 xs:grid-cols-3 grid-cols-2 w-full gap-3 lg:gap-0.5 max-w-[200px] xs:max-w-[310px] md:max-w-[420px] lg:max-w-full'
   >
     {
       technologies.map((t) => (
         <div class='col-span-1 mx-auto'>
           <TechnologyCard
             title={t.name}
-            image={envConfig().appUrl + t.image}
+            image={EnvService.getClient() + t.image}
             animation={t.animation}
           />
         </div>

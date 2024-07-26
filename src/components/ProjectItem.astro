@@ -1,10 +1,10 @@
 ---
 import GitHubIcon from './icons/GitHubIcon.astro';
 import Typography from './ui/Typography.astro';
-import LinkButton from './ui/LinkButton.astro';
 import type { TechnologyTag } from '@/utilities/types';
 import LinkIcon from './icons/LinkIcon.astro';
 import Chip from './ui/Chip.astro';
+import ActionLinkButton from './ActionLinkButton.astro';
 
 interface Props {
   title: string;
@@ -51,18 +51,18 @@ const { image, title, description, technologies, previewUrl, repositoryUrl } = A
       <div class='space-x-3 pt-2'>
         {
           repositoryUrl && (
-            <LinkButton href={repositoryUrl}>
+            <ActionLinkButton href={repositoryUrl} radius='xl'>
               <GitHubIcon />
               Code
-            </LinkButton>
+            </ActionLinkButton>
           )
         }
         {
           previewUrl && (
-            <LinkButton href={previewUrl}>
+            <ActionLinkButton href={previewUrl} radius='xl'>
               <LinkIcon />
               Preview
-            </LinkButton>
+            </ActionLinkButton>
           )
         }
       </div>

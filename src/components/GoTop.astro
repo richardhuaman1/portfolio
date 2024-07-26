@@ -4,10 +4,10 @@ import GoUpIcon from './icons/GoUpIcon.astro';
 
 <button
   id='go-top'
-  class='fixed bottom-4 right-4 bg-primary-600 text-white p-3 rounded-full shadow-lg hover:bg-primary-700 transition duration-300 ease-in-out hidden'
+  class='fixed bottom-4 right-4 bg-primary-600 ring-2 ring-transparent focus:ring-gray-200 lg:hover:ring-gray-200 text-white rounded-full shadow-lg lg:hover:bg-primary-600/90 transition duration-300 ease-in-out hidden p-2'
   aria-label='Go to top'
 >
-  <GoUpIcon />
+  <GoUpIcon class:list='size-9' />
 </button>
 
 <script>
