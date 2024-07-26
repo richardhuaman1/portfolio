@@ -3,6 +3,8 @@ export const LAYOUT_SIZES = {
   footer: 52,
 };
 
+export const LAYOUT_TOTAL_HEIGHT = LAYOUT_SIZES.navbar + LAYOUT_SIZES.footer;
+
 export const SECTIONS = {
   home: 'Home',
   skills: 'Skills',

@@ -1,0 +1,34 @@
+---
+import ActionLinkButton from '@/components/ActionLinkButton.astro';
+import Container from '@/components/Container.astro';
+import AliensIcon from '@/components/icons/AliensIcon.astro';
+import Typography from '@/components/ui/Typography.astro';
+import { me } from '@/data/me';
+import ErrorLayout from '@/layouts/ErrorLayout.astro';
+import { EnvService } from '@/services/env.service';
+import { LAYOUT_TOTAL_HEIGHT } from '@/utilities/constants';
+---
+
+<ErrorLayout title={me.name} description={me.about} canonical={EnvService.getClient()}>
+  <Container
+    style={`height: calc(100vh - ${LAYOUT_TOTAL_HEIGHT}px);`}
+    class='flex items-center justify-center'
+  >
+    <div class='flex items-center justify-center flex-col lg:flex-row'>
+      <AliensIcon class:list='text-primary-600/70 size-[350px] w-full lg:w-auto' />
+      <div class='pt-3 lg:pt-0 flex items-center justify-center flex-col'>
+        <Typography as='p' size='big-2' class:list='font-medium text-center'
+          >404 - Page Not Found</Typography
+        >
+        <Typography as='p' size='xl' color='light' class='text-center'
+          >Looks like there's nothing to see here</Typography
+        >
+        <div class='mt-6 font-medium'>
+          <ActionLinkButton href='/' radius='xl' color='primary' target='_self'>
+            Take me Home
+          </ActionLinkButton>
+        </div>
+      </div>
+    </div>
+  </Container>
+</ErrorLayout>
