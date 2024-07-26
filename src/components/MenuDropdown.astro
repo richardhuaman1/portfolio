@@ -5,15 +5,19 @@ import { SECTION_KEYS } from '@/utilities/constants';
 
 <div class='relative md:hidden' id='dropdown-container'>
   <div class='flex items-center justify-center h-full'>
-    <button aria-label='Dropdown menu' id='dropdown-button' class='h-10 w-auto p-1.5'>
+    <button
+      aria-label='Dropdown menu'
+      id='dropdown-button'
+      class='p-1 focus:ring-2 ring-gray-200 rounded-xl flex items-center justify-center'
+    >
       <MobileMenuIcon class:list='size-9 text-gray-200' />
     </button>
   </div>
   <div
-    class='dropdown-menu origin-top-right absolute right-0 mt-2 w-44 shadow-lg bg-gray-900 rounded-lg ring-1 ring-gray-800 ring-opacity-5 focus:outline-none'
+    class='dropdown-menu origin-top-right absolute right-0 mt-4 w-44 shadow-lg bg-gray-800 rounded-lg ring-1 ring-gray-600 ring-opacity-5 focus:outline-none'
     id='dropdown-menu'
   >
-    <div class='py-1' role='menu' aria-orientation='vertical' aria-labelledby='dropdown-button'>
+    <div class='py-1.5' role='menu' aria-orientation='vertical' aria-labelledby='dropdown-button'>
       {
         SECTION_KEYS.map((option, index) => (
           <a
