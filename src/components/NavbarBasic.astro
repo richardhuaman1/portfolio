@@ -1,0 +1,15 @@
+---
+import Container from '@/components/Container.astro';
+import { LAYOUT_SIZES } from '@/utilities/constants';
+import Logo from './Logo.astro';
+
+const navbarHeight = LAYOUT_SIZES.navbar;
+---
+
+<header class='sticky top-0 z-50 backdrop-blur-lg bg-dark/50'>
+  <Container class='flex items-center justify-center py-4' style={`height:${navbarHeight}px;`}>
+    <div>
+      <Logo />
+    </div>
+  </Container>
+</header>

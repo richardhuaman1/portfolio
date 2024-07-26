@@ -1,12 +1,17 @@
 ---
 import Container from '@/components/Container.astro';
 import MenuDropdown from '@/components/MenuDropdown.astro';
-import { SECTIONS } from '@/utilities/constants';
+import { LAYOUT_SIZES, SECTIONS } from '@/utilities/constants';
 import Logo from './Logo.astro';
+
+const navbarHeight = LAYOUT_SIZES.navbar;
 ---
 
 <header class='sticky top-0 z-50 backdrop-blur-lg bg-dark/50'>
-  <Container class='flex items-center justify-end md:justify-center py-4 relative'>
+  <Container
+    class='flex items-center justify-end md:justify-center relative py-4'
+    style={`height:${navbarHeight}px;`}
+  >
     <div class='absolute left-4 md:hidden flex'>
       <Logo />
     </div>
