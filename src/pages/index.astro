@@ -1,5 +1,4 @@
 ---
-import CodeIcon from '@/components/icons/CodeIcon.astro';
 import BriefcaseIcon from '@/components/icons/BriefcaseIcon.astro';
 import Layout from '../layouts/Layout.astro';
 import SectionContainer from '@/components/SectionContainer.astro';
@@ -11,6 +10,7 @@ import { SECTIONS } from '@/utilities/constants';
 import SkillIcon from '@/components/icons/SkillIcon.astro';
 import { me } from '@/data/me';
 import { EnvService } from '@/services/env.service';
+import LaptopIcon from '@/components/icons/LaptopIcon.astro';
 ---
 
 <Layout title={me.name} description={me.about} canonical={EnvService.getClient()}>
@@ -24,7 +24,7 @@ import { EnvService } from '@/services/env.service';
   <SectionContainer id={SECTIONS.experience} title='Work Experience' icon={BriefcaseIcon}>
     <WorkExperienceSection />
   </SectionContainer>
-  <SectionContainer id={SECTIONS.projects} title='Projects' icon={CodeIcon}>
+  <SectionContainer id={SECTIONS.projects} title='Projects' icon={LaptopIcon}>
     <ProjectsSection />
   </SectionContainer>
 </Layout>
