@@ -21,13 +21,17 @@ const { image, title, description, technologies, previewUrl, repositoryUrl } = A
 <div class='mx-auto flex flex-col gap-4 lg:flex-row lg:gap-8'>
   <!--   Image container  -->
   <div class='flex-1'>
-    <div class='overflow-hidden' style={{ aspectRatio: '70/45' }}>
+    <div
+      style={{ aspectRatio: '70/45' }}
+      class='border-gray-700 hover:border-gray-600 border-[1px] group overflow-hidden rounded-xl transition duration-500 ease-in-out'
+    >
       <img
         loading='lazy'
         alt={title}
-        class='object-cover shadow-2xl transition duration-500 lg:hover:scale-105 rounded-xl border-[1px] border-gray-800'
+        class='h-full object-cover shadow-2xl transition duration-500 ease-in-out lg:group-hover:scale-105 rounded-xl'
         src={image}
-        sizes='(max-width: 768px) 100vh, 700px'
+        width='700'
+        height='300'
       />
     </div>
   </div>
