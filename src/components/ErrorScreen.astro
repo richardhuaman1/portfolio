@@ -17,6 +17,7 @@ const { description, title } = Astro.props;
 ---
 
 <ErrorLayout title={me.name} description={title} canonical={EnvService.getClient()}>
+  <h1 hidden aria-hidden='true'>{title}</h1>
   <Container
     style={`height: calc(100vh - ${LAYOUT_TOTAL_HEIGHT}px);`}
     class='flex items-center justify-center'
