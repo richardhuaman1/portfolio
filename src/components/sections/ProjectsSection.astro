@@ -99,7 +99,7 @@ const projectsList: Project[] = [
     projectsList.map((project) => (
       <ProjectItem
         description={project.description}
-        image={EnvService.getClient() + project.image}
+        image={project.image}
         technologies={project.technologies}
         title={project.title}
         previewUrl={project.previewUrl}

@@ -38,12 +38,12 @@ const { image, title, description, technologies, previewUrl, repositoryUrl } = A
   <!--   Description container  -->
   <div class='flex-1'>
     <div class='space-y-3'>
-      <Typography as='p' size='2xl' class='font-semibold'>
+      <Typography as='p' size='2xl' color='primary' class='font-semibold'>
         {title}
       </Typography>
       <Typography as='p' size='md' color='light'>{description}</Typography>
       <div>
-        <Typography as='p' size='lg' color='primary' class='font-medium'> Technologies:</Typography>
+        <Typography as='p' size='lg' class='font-medium'> Technologies:</Typography>
         <div class='mt-2 flex flex-wrap gap-2'>
           {technologies.map((tech) => <Chip color={tech.color}>{tech.name}</Chip>)}
         </div>

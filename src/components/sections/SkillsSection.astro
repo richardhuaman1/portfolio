@@ -2,7 +2,6 @@
 import type { Technology } from '@/utilities/types';
 import SkillsIcon from '../icons/SkillsIcon.astro';
 import TechnologyCard from '../TechnologyCard.astro';
-import { EnvService } from '@/services/env.service';
 
 const technologies: Technology[] = [
   {
@@ -93,11 +92,7 @@ const technologies: Technology[] = [
     {
       technologies.map((t) => (
         <div class='col-span-1 mx-auto'>
-          <TechnologyCard
-            title={t.name}
-            image={EnvService.getClient() + t.image}
-            animation={t.animation}
-          />
+          <TechnologyCard title={t.name} image={t.image} animation={t.animation} />
         </div>
       ))
     }
