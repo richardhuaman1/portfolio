@@ -5,11 +5,11 @@ import type { Project } from '@/utilities/types';
 
 const projectsList: Project[] = [
   {
-    title: 'Document management system (DMS)',
+    title: 'Document management system',
     description:
       'Used to create, store, manage, and track electronic documents and images of paper-based documents through software.',
     image: '/images/projects/cms_tramites.webp',
-    previewUrl: EnvService.getProjects().crunchyroll || '',
+    previewUrl: EnvService.getProjects().crunchyroll.url,
     repositoryUrl: null,
     technologies: [
       {
@@ -49,14 +49,14 @@ const projectsList: Project[] = [
   {
     title: 'Streaming Platform',
     description:
-      'A modern anime streaming platform built using React, TypeScript, and Tailwind CSS. Enjoy a clean and responsive user interface.',
+      'A modern streaming platform built using React, TypeScript, and Tailwind CSS. Enjoy a clean and responsive user interface.',
     image: '/images/projects/streaming_platform.webp',
-    previewUrl: EnvService.getProjects().crunchyroll || '',
-    repositoryUrl: 'https://github.com/richardhuam/crunchyroll-clone-pb.git',
+    previewUrl: EnvService.getProjects().crunchyroll.demo,
+    repositoryUrl: EnvService.getProjects().crunchyroll.url,
     technologies: [
       {
-        name: 'React',
-        color: 'bg-sky-500',
+        name: 'Astro',
+        color: 'bg-orange-500',
       },
       {
         name: 'Typescript',
@@ -74,8 +74,8 @@ const projectsList: Project[] = [
     description:
       'A beautiful design created with NextJS, Typescript and Tailwind CSS. Show your works, skills, projects and more, it includes features such as responsive layout and dark mode.',
     image: '/images/projects/portfolio_design.webp',
-    previewUrl: EnvService.getProjects().portfolioApp || '',
-    repositoryUrl: 'https://github.com/richardhuam/portfolio-app.git',
+    previewUrl: EnvService.getProjects().portfolioApp.demo,
+    repositoryUrl: EnvService.getProjects().portfolioApp.url,
     technologies: [
       {
         name: 'Next JS',
