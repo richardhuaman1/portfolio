@@ -1,14 +1,10 @@
 ---
+import type { Experience } from '@/utilities/types';
 import Typography from './ui/Typography.astro';
 
-interface Props {
-  title: string;
-  company: string;
-  description: string;
-  date: string;
-}
+type Props = Experience;
 
-const { title, company, description, date } = Astro.props;
+const { companyName, from, position, roles, technologies, to } = Astro.props;
 ---
 
 <div
@@ -18,22 +14,40 @@ const { title, company, description, date } = Astro.props;
     <div class='sticky top-0'>
       <span class='text-primary -left-[41.5px] absolute rounded-full text-5xl'>&bull;</span>
       <Typography as='h3' size='2xl' color='primary' class='font-semibold mb-0.5'>
-        {title}
+        {position}
       </Typography>
       <Typography as='h4' size='xl' class='font-medium mb-0.5'>
-        {company}
+        {companyName}
       </Typography>
       <Typography as='p' size='md' color='dim'>
-        {date}
+        {`${from} - ${to}`}
       </Typography>
     </div>
   </div>
-  <Typography
-    as='p'
-    size='md'
-    color='light'
-    class='relative flex flex-col gap-2 pb-4 md:col-span-3'
-  >
-    {description}
-  </Typography>
+  <div class='relative flex flex-col gap-2 pb-4 md:col-span-3'>
+    <ul class='list-disc text-gray-300 space-y-3'>
+      {
+        roles.map((rol) => (
+          <li>
+            <Typography as='p' size='md' color='light'>
+              {rol}
+            </Typography>
+          </li>
+        ))
+      }
+    </ul>
+    <div class='mt-1'>
+      <Typography as='p' size='md' class:list='font-medium'> Technologies: </Typography>
+      <div class='flex flex-wrap'>
+        {
+          technologies.map((tech, index) => (
+            <Typography as='p' size='md' color='light' class:list='mr-1'>
+              {tech}
+              {index === technologies.length - 1 ? '.' : ','}
+            </Typography>
+          ))
+        }
+      </div>
+    </div>
+  </div>
 </div>

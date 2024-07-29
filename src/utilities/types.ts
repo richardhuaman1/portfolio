@@ -3,7 +3,8 @@ export type Experience = {
   from: string;
   to: string;
   position: string;
-  description: string;
+  roles: string[];
+  technologies: string[];
 };
 
 export type Project = {
