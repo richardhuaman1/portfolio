@@ -2,7 +2,7 @@
 
 <div align="center">
 <a href="https://richardhuaman.dev/">
-<img src="./public/images/porfolio.webp">
+<img src="./public/images/portfolio.webp">
 </a>
 <p></p>
 </div>
