@@ -1,13 +1,14 @@
 ---
+import type { Icon } from '@/utilities/types';
 import Typography from './ui/Typography.astro';
 
 interface Props {
   title: string;
-  image: string;
+  icon: Icon;
   animation: 'wiggle' | 'spin';
 }
 
-const { image, title, animation, ...restProps } = Astro.props;
+const { icon: Icon, title, animation, ...restProps } = Astro.props;
 ---
 
 <div
@@ -16,12 +17,12 @@ const { image, title, animation, ...restProps } = Astro.props;
   class='rounded-xl h-[95px] w-[95px] group focus:ring-gray-300 ring-2 ring-transparent'
 >
   <div class='h-[65%] flex items-center justify-center p-2'>
-    <img
-      src={image}
-      aria-label={title}
-      width='43'
-      height='43'
-      class={`${animation === 'spin' ? 'group-hover:animate-spin' : 'group-hover:animate-wiggle'}`}
+    <Icon
+      class:list={[
+        'w-[43px] h-auto',
+        { 'group-hover:animate-spin': animation === 'spin' },
+        { 'group-hover:animate-wiggle': animation === 'wiggle' },
+      ]}
     />
   </div>
   <div class='h-[35%] flex items-center justify-center p-2'>

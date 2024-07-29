@@ -18,7 +18,7 @@ export type Project = {
 
 export type Technology = {
   name: string;
-  image: string;
+  icon: Icon;
   animation: 'wiggle' | 'spin';
 };
 

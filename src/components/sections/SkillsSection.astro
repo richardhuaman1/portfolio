@@ -2,93 +2,80 @@
 import type { Technology } from '@/utilities/types';
 import SkillsIcon from '../icons/SkillsIcon.astro';
 import TechnologyCard from '../TechnologyCard.astro';
+import ReactIcon from '../icons/technologies/ReactIcon.astro';
+import NextjsIcon from '../icons/technologies/NextjsIcon.astro';
+import TypescriptIcon from '../icons/technologies/TypescriptIcon.astro';
+import TailwindIcon from '../icons/technologies/TailwindIcon.astro';
+import NodeIcon from '../icons/technologies/NodeIcon.astro';
+import ExpressIcon from '../icons/technologies/ExpressIcon.astro';
+import NestJSIcon from '../icons/technologies/NestJSIcon.astro';
+import JavascriptIcon from '../icons/technologies/JavascriptIcon.astro';
+import HtmlIcon from '../icons/technologies/HtmlIcon.astro';
+import CssIcon from '../icons/technologies/CssIcon.astro';
+import JestIcon from '../icons/technologies/JestIcon.astro';
+import TestingLibraryIcon from '../icons/technologies/TestingLibraryIcon.astro';
 
 const technologies: Technology[] = [
   {
     name: 'React JS',
-    image: '/images/technologies/react.svg',
+    icon: ReactIcon,
     animation: 'spin',
   },
   {
     name: 'Next JS',
-    image: '/images/technologies/nextjs.svg',
+    icon: NextjsIcon,
     animation: 'wiggle',
   },
   {
     name: 'Typescript',
-    image: '/images/technologies/typescript.svg',
+    icon: TypescriptIcon,
     animation: 'wiggle',
   },
   {
     name: 'Tailwind Css',
-    image: '/images/technologies/tailwindcss.svg',
+    icon: TailwindIcon,
     animation: 'wiggle',
   },
   {
     name: 'Node',
-    image: '/images/technologies/nodejs.svg',
+    icon: NodeIcon,
     animation: 'wiggle',
   },
   {
     name: 'Express',
-    image: '/images/technologies/express.svg',
+    icon: ExpressIcon,
     animation: 'wiggle',
   },
   {
     name: 'Nest JS',
-    image: '/images/technologies/nestjs.svg',
+    icon: NestJSIcon,
     animation: 'wiggle',
   },
   {
     name: 'Javascript',
-    image: '/images/technologies/javascript.svg',
+    icon: JavascriptIcon,
     animation: 'wiggle',
   },
   {
     name: 'Html',
-    image: '/images/technologies/html-5.svg',
+    icon: HtmlIcon,
     animation: 'wiggle',
   },
   {
     name: 'Css',
-    image: '/images/technologies/css-3.svg',
+    icon: CssIcon,
     animation: 'wiggle',
   },
   {
     name: 'Jest',
-    image: '/images/technologies/jest.svg',
+    icon: JestIcon,
     animation: 'wiggle',
   },
   {
     name: 'Testing Library',
-    image: '/images/technologies/testing-library.svg',
+    icon: TestingLibraryIcon,
     animation: 'wiggle',
   },
-  /*   {
-    name: 'Java',
-    image: '/images/technologies/java.svg',
-    animation: 'wiggle',
-  }, */
-  /*   {
-    name: 'Spring Boot',
-    image: '/images/technologies/spring.svg',
-    animation: 'wiggle',
-  }, */
-  /*   {
-    name: 'Linux',
-    image: '/images/technologies/linux.svg',
-    animation: 'wiggle',
-  },
-  {
-    name: 'Git',
-    image: '/images/technologies/git.svg',
-    animation: 'wiggle',
-  },
-  {
-    name: 'Github',
-    image: '/images/technologies/github.svg',
-    animation: 'wiggle',
-  }, */
 ];
 ---
 
@@ -102,7 +89,7 @@ const technologies: Technology[] = [
     {
       technologies.map((t) => (
         <div class='col-span-1 mx-auto'>
-          <TechnologyCard title={t.name} image={t.image} animation={t.animation} />
+          <TechnologyCard title={t.name} icon={t.icon} animation={t.animation} />
         </div>
       ))
     }
