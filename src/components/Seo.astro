@@ -8,18 +8,12 @@ interface Props {
   image?: string;
 }
 
-const {
-  title,
-  description,
-  canonical,
-  image = 'https://cdn.richardhuaman.dev/og.jpg',
-} = Astro.props as Props;
+const { title, description, canonical, image = '/images/open-graph.svg' } = Astro.props as Props;
 
 const determineCanonicalURL = () => {
-  const localhost = 'http://localhost:4321';
+  if (canonical) return canonical;
 
-  if (Astro.url.host.includes('localhost')) return localhost;
-  return canonical || Astro.url.pathname;
+  return 'http://localhost:4321';
 };
 
 const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
@@ -31,35 +25,20 @@ const canonicalURL = new URL(determineCanonicalURL(), Astro.site);
 <meta name='description' content={description} />
 
 <link rel='canonical' href={canonicalURL} />
-<meta name='viewport' content='width=device-width' />
+<meta name='viewport' content='width=device-width, initial-scale=1' />
 
-<meta name='keywords' content='richardhuaman, portfolio, software engineer, comet' />
+<meta name='keywords' content='richard huaman,portfolio,fullstack,software engineer,comet' />
 
-<!-- Font preloads -->
-
-<!-- <meta name='twitter:card' content='summary_large_image' />
-<meta name='twitter:site' content='@richardhuaman.dev' />
-<meta name='twitter:creator' content='@richardhuaman.dev' />
-<meta name='twitter:title' content={title} />
-<meta name='twitter:description' content={description} />
-<meta name='twitter:image' content={new URL(image, Astro.url)} /> -->
-
-<meta property='og:image' content={new URL(image, Astro.url)} />
+<meta property='og:image' content={new URL(image, determineCanonicalURL())} />
 <meta property='og:title' content={title} />
 <meta property='og:description' content={description} />
-<meta property='og:url' content={Astro.url} />
+<meta property='og:url' content={determineCanonicalURL()} />
 <meta property='og:site_name' content={title} />
 <meta property='og:type' content='website' />
-<meta property='og:locale' content='en_EN' />
 
 <meta name='robots' content='index, follow' />
 <meta name='googlebot' content='index, follow' />
 
 <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-<!-- <link rel='apple-touch-icon' href='/img/icons/apple-touch-icon.png' /> -->
-
-<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-<!-- <meta name='msapplication-config' content='/browserconfig.xml' /> -->
-
-<!-- <script is:inline src='/registerSW.js'></script> -->
-<!-- <link rel='manifest' href='/manifest.webmanifest' /> -->
+<link rel='icon' type='image/png' href='/favicon.png' sizes='24x24' />
+<!-- <link rel='apple-touch-icon' href='/apple-touch-icon.png' /> -->

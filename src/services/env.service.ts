@@ -11,8 +11,14 @@ export class EnvService {
 
   static getProjects() {
     return {
-      crunchyroll: import.meta.env.VITE_PROJECT_CRUNCHYROLL_CLONE_URL as string,
-      portfolioApp: import.meta.env.VITE_PROJECT_PORTFOLIO_APP as string,
+      crunchyroll: {
+        demo: import.meta.env.VITE_PROJECT_CRUNCHYROLL_CLONE_URL as string,
+        url: import.meta.env.VITE_PROJECT_CRUNCHYROLL_CLONE_URL_REPOSITORY as string,
+      },
+      portfolioApp: {
+        demo: import.meta.env.VITE_PROJECT_PORTFOLIO_APP as string,
+        url: import.meta.env.VITE_PROJECT_PORTFOLIO_APP_REPOSITORY as string,
+      },
       ecommerceTgd: import.meta.env.VITE_PROJECT_ECOMMERCE_TGD as string,
     };
   }

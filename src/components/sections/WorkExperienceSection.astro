@@ -4,28 +4,78 @@ import ExperienceItem from '../ExperienceItem.astro';
 
 const experience: Experience[] = [
   {
-    companyName: 'EPS. Ilo',
+    companyName: 'Eps Ilo S.A.',
     position: 'Software Engineer',
     from: 'Aug, 2023',
     to: 'Present',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita nobis illo culpa id dolores, dolorem tempora harum soluta necessitatibus voluptatum maxime temporibus labore ratione dignissimos quibusdam. Nostrum consectetur corporis aspernatur?',
+    roles: [
+      'Designed and implemented a Queue Management System, significantly reducing customer wait times and enhancing service efficiency.',
+      'Integrated a Document Management System, streamlining document handling and improving overall management processes.',
+      'Performed unit testing to ensure code reliability and functionality.',
+    ],
+    technologies: [
+      'React',
+      'Next',
+      'Typescript',
+      'Jest',
+      'Testing Library',
+      'Zustand',
+      'React Query',
+      'MySQL',
+      'Socket IO',
+      'Tailwind CSS',
+      'Node',
+      'Express',
+      'Nest',
+    ],
   },
   {
-    companyName: 'EPS. Ilo',
-    position: 'Software Engineer',
-    from: 'Aug, 2023',
-    to: 'Present',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita nobis illo culpa id dolores, dolorem tempora harum soluta necessitatibus voluptatum maxime temporibus labore ratione dignissimos quibusdam. Nostrum consectetur corporis aspernatur?',
+    companyName: 'Centro Radiologico Stomarx S.A.C.',
+    position: 'Full Stack Developer',
+    from: 'Jun, 2022',
+    to: 'Aug, 2023',
+    roles: [
+      'Developed a comprehensive system for managing and delivering imaging services (x-rays, 3D images, tomographies) to affiliated clients, improving service delivery',
+      'Integrated a real-time chat application, enhancing communication and collaboration among employees.',
+      'Designed and implemented new features for existing applications, leading to improved usability and performance.',
+    ],
+    technologies: [
+      'React',
+      'Typescript',
+      'Redux Toolkit',
+      'Node',
+      'Express',
+      'Tailwind CSS',
+      'MySQL',
+      'AWS S3',
+      'AWS EC2',
+    ],
   },
   {
-    companyName: 'EPS. Ilo',
-    position: 'Software Engineer',
-    from: 'Aug, 2023',
-    to: 'Present',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita nobis illo culpa id dolores, dolorem tempora harum soluta necessitatibus voluptatum maxime temporibus labore ratione dignissimos quibusdam. Nostrum consectetur corporis aspernatur?',
+    companyName: 'Fairdent S.A.C.',
+    position: 'Software Developer',
+    from: 'Nov, 2021',
+    to: 'Jun, 2022',
+    roles: [
+      'Developed and implemented new features based on user feedback and business requirements, enhancing overall user experience',
+      'Integrated an attendance control system, improving employee time tracking and management.',
+      'Performed regular maintenance to minimize bugs and optimize application performance, ensuring smooth operation.',
+      'Integrated a feedback system to collect client suggestions and enhance service quality based on their input.',
+    ],
+    technologies: [
+      'React Native',
+      'Material UI',
+      'Bootstrap',
+      'Sass',
+      'Redux Saga',
+      'Node',
+      'PHP',
+      'Laravel',
+      'Socket IO',
+      'AWS S3',
+      'C#',
+      'MySQL',
+    ],
   },
 ];
 ---
@@ -35,10 +85,12 @@ const experience: Experience[] = [
     experience.map((exp) => (
       <li>
         <ExperienceItem
-          title={exp.position}
-          company={exp.companyName}
-          date={`${exp.from} - ${exp.to}`}
-          description={exp.description}
+          position={exp.position}
+          companyName={exp.companyName}
+          from={exp.from}
+          to={exp.to}
+          roles={exp.roles}
+          technologies={exp.technologies}
         />
       </li>
     ))
