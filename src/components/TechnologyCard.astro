@@ -18,6 +18,8 @@ const { icon: Icon, title, animation, ...restProps } = Astro.props;
 >
   <div class='h-[65%] flex items-center justify-center p-2'>
     <Icon
+      height={43}
+      widht={43}
       class:list={[
         'w-[43px] h-auto',
         { 'group-hover:animate-spin': animation === 'spin' },
