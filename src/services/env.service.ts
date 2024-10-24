@@ -19,7 +19,10 @@ export class EnvService {
         demo: import.meta.env.VITE_PROJECT_PORTFOLIO_APP as string,
         url: import.meta.env.VITE_PROJECT_PORTFOLIO_APP_REPOSITORY as string,
       },
-      ecommerceTgd: import.meta.env.VITE_PROJECT_ECOMMERCE_TGD as string,
+      queueApp: {
+        demo: import.meta.env.VITE_PROJECT_QUEUE_MANAGEMENT as string,
+        url: null,
+      },
     };
   }
 
