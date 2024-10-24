@@ -1,0 +1,58 @@
+import type { Experience } from '@/utilities/types';
+
+export const experience: Experience[] = [
+  {
+    companyName: 'Eps Ilo S.A.',
+    position: 'Full Stack Developer',
+    from: 'Aug, 2023',
+    to: 'Present',
+    roles: [
+      'Designed and implemented a Queue Management System, reducing customer wait times and improving service efficiency.',
+      'Integrated a Document Management System, optimizing document handling and streamlining administrative processes, resulting in improved operational efficiency.',
+      "Deployed applications to the production environment on the company's local server, ensuring proper functionality and availability for end users.",
+      'Performed regular maintenance of applications, reducing errors and optimizing overall performance.',
+    ],
+    technologies: [
+      'React',
+      'Next',
+      'Typescript',
+      'Testing Library',
+      'Zustand',
+      'MySQL',
+      'Socket IO',
+      'Tailwind CSS',
+      'Node',
+      'Express',
+      'Nest',
+    ],
+  },
+  {
+    companyName: 'Grupo SOS S.A.C.',
+    position: 'Full Stack Developer',
+    from: 'Nov, 2021',
+    to: 'May, 2023',
+    roles: [
+      'Implemented an Attendance Control System, improving accuracy in tracking work hours and facilitating employee time management.',
+      'Developed and integrated a Medical Imaging Service Management System (X-rays, 3D images, Dental CT scans), enhancing the service capacity for affiliated clients and improving service quality.',
+      'Implemented a Real-Time Chat Application, which improved internal communication and collaboration among employees.',
+      'Developed a Virtual Suggestion Box, enabling customer feedback and contributing to improved customer service.',
+    ],
+    technologies: [
+      'React',
+      'React Native',
+      'Typescript',
+      'Sass',
+      'Material UI',
+      'Redux',
+      'Node',
+      'PHP',
+      'Laravel',
+      'Socket IO',
+      'AWS S3',
+      'AWS EC2',
+      'C#',
+      'MySQL',
+      'Linux',
+    ],
+  },
+];
