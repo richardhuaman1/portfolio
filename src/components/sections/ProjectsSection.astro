@@ -4,25 +4,17 @@ import ProjectItem from '../ProjectItem.astro';
 import type { Project } from '@/utilities/types';
 
 const projectsList: Project[] = [
-  /*   {
+  {
     title: 'Queue management system',
     description:
-      'Used to create, store, manage, and track electronic documents and images of paper-based documents through software.',
-    image: '/images/projects/cms_tramites.webp',
-    previewUrl: null,
+      'Designed to organize customer queues, streamline wait times, and enhance service efficiency',
+    image: '/images/projects/queue_management.webp',
+    previewUrl: EnvService.getProjects().queueApp.demo,
     repositoryUrl: null,
     technologies: [
       {
         name: 'React',
         color: 'bg-sky-500',
-      },
-      {
-        name: 'Next JS',
-        color: 'bg-gray-200',
-      },
-      {
-        name: 'React Query',
-        color: 'bg-red-500',
       },
       {
         name: 'Typescript',
@@ -40,12 +32,8 @@ const projectsList: Project[] = [
         name: 'MySQL',
         color: 'bg-blue-500',
       },
-      {
-        name: 'Nest JS',
-        color: 'bg-red-500',
-      },
     ],
-  }, */
+  },
   {
     title: 'Streaming Platform',
     description:
