@@ -3,7 +3,7 @@ import type { Experience } from '@/utilities/types';
 export const experience: Experience[] = [
   {
     companyName: 'Eps Ilo S.A.',
-    position: 'Full Stack Developer',
+    position: 'Software Engineer',
     from: 'Aug, 2023',
     to: 'Present',
     roles: [
@@ -30,7 +30,7 @@ export const experience: Experience[] = [
     companyName: 'Grupo SOS S.A.C.',
     position: 'Full Stack Developer',
     from: 'Nov, 2021',
-    to: 'May, 2023',
+    to: 'Jun, 2023',
     roles: [
       'Implemented an Attendance Control System, improving accuracy in tracking work hours and facilitating employee time management.',
       'Developed and integrated a Medical Imaging Service Management System (X-rays, 3D images, Dental CT scans), enhancing the service capacity for affiliated clients and improving service quality.',
