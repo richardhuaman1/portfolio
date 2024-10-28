@@ -8,9 +8,9 @@ export const experience: Experience[] = [
     to: 'Present',
     roles: [
       'Implemented a Queue Management System, reducing customer wait times by over 30% and enhancing service efficiency, which streamlined employee interactions with clients to provide more timely and effective assistance.',
-      'Integrated a Document Management System, optimizing document handling and streamlining administrative processes, resulting in improved operational efficiency.',
-      "Deployed and configured applications on the company's local server, ensuring dependable functionality and continuous availability for end users.",
-      'Maintained and refactored legacy code for existing projects, improving the maintainability of the codebase, which reduced bug reports by 15%.',
+      'Developed a Document Management System that optimized document handling and streamlined administrative processes, significantly improving operational efficiency. Enabled fast response times for document access across all areas of the company, enhancing collaboration and productivity among employees.',
+      'Integrated a user-friendly document tracking interface that empowers citizens to track the status of their documents in real-time and initiate new processes directly, simplifying access to information for public users.',
+      "Collaborated on deploying and configuring applications on the company's local server, establishing dependable functionality and continuous availability for end users.",
     ],
     technologies: [
       'React',
@@ -35,11 +35,11 @@ export const experience: Experience[] = [
     from: 'Nov, 2021',
     to: 'Jun, 2023',
     roles: [
-      'Implemented an Attendance Control System, improving accuracy in tracking work hours and facilitating employee time management.',
-      'Developed and integrated a Medical Imaging Service Management System (X-rays, 3D images, Dental CT scans), enhancing the service capacity for affiliated clients and improving service quality.',
-      'Redesigned and enhanced a job board website by implementing new features such as categorized job listings, user-friendly navigation, and structural improvements. These upgrades boosted usability, broadened the site’s reach, and increased candidate engagement, resulting in a 25% rise in traffic.',
-      'Built and Integrated a Real-Time Chat Application,  which enhanced collaboration, streamlined information sharing, and fostered a more connected and productive workplace environment.',
-      'Developed and Launched  a Virtual Suggestion Box, providing customers with a direct feedback platform that informed service improvements and boosted overall customer satisfaction.',
+      'Developed a Medical Imaging Service Management System for X-rays and 3D imaging, enabling local clinics to register, access imaging results, and receive diagnostics via email. Improved client retention by 20% and cut diagnostic turnaround by 30%, enhancing service efficiency and quality.',
+      'Redesigned and enhanced a job board website by implementing new features such as categorized job listings, user-friendly navigation, and structural improvements. These upgrades boosted usability, broadened the site’s reach, and increased candidate engagement, resulting in a 25% rise in job applications.',
+      'Built and Integrated a Chat Application,  which enhanced collaboration, streamlined information sharing, and fostered a more connected and productive workplace environment.',
+      'Developed and Integrated a Virtual Suggestion Box, providing customers with a direct feedback platform that informed service improvements and boosted overall customer satisfaction.',
+      'Maintained and refactored legacy code for existing projects, improving the maintainability of the codebase, which reduced bug reports by 15%.',
     ],
     technologies: [
       'React',
@@ -57,6 +57,7 @@ export const experience: Experience[] = [
       'Laravel',
       'AWS S3',
       'AWS EC2',
+      'Sequelize',
       'C#',
       'MySQL',
       'Linux',
