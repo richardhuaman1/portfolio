@@ -28,7 +28,7 @@ const imagePaths = Object.keys(images).filter((imagePath) => {
           data-pswp-width={optimizedImage.attributes.width}
           data-pswp-height={optimizedImage.attributes.height}
           target='_blank'
-          class='overflow-hidden rounded-md border-[1px] hover:border-secondary'
+          class='overflow-hidden rounded-xl border-2 border-gray-600 hover:border-gray-300 transition ease-in-out delay-100 duration-300'
         >
           <Image
             src={image}
