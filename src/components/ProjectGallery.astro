@@ -1,0 +1,34 @@
+---
+import ImageGallery from './ImageGallery.astro';
+
+const { imageFolder } = Astro.props;
+---
+
+<div id='project-gallery-container' class='project-gallery-container'>
+  <ImageGallery imageFolder={imageFolder} />
+</div>
+
+<script>
+  const galleryButton = document.getElementById('screenshot-button');
+  const galleryContainer = document.getElementById('project-gallery-container');
+
+  galleryButton?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    galleryContainer?.classList.toggle('show');
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!galleryContainer?.contains(event?.target as Node)) {
+      galleryContainer?.classList.remove('show');
+    }
+  });
+</script>
+
+<style>
+  .project-gallery-container {
+    display: none;
+  }
+  .project-gallery-container.show {
+    display: block;
+  }
+</style>

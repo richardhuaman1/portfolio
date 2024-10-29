@@ -17,7 +17,11 @@
     "@playform/compress": "^0.0.13",
     "astro": "^4.12.2",
     "astro-robots-txt": "^1.0.0",
+    "photoswipe": "^5.4.4",
     "tailwindcss": "^3.4.6",
     "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@types/photoswipe": "^4.1.6"
   }
 }

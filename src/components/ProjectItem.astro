@@ -3,8 +3,10 @@ import GitHubIcon from './icons/GitHubIcon.astro';
 import Typography from './ui/Typography.astro';
 import type { TechnologyTag } from '@/utilities/types';
 import LinkIcon from './icons/LinkIcon.astro';
+import CameraIcon from './icons/CameraIcon.astro';
 import Chip from './ui/Chip.astro';
 import ActionLinkButton from './ActionLinkButton.astro';
+import ProjectGallery from './ProjectGallery.astro';
 
 interface Props {
   title: string;
@@ -13,9 +15,11 @@ interface Props {
   technologies: TechnologyTag[];
   repositoryUrl: string | null;
   previewUrl: string | null;
+  screenshotsDir?: string;
 }
 
-const { image, title, description, technologies, previewUrl, repositoryUrl } = Astro.props;
+const { image, title, description, technologies, previewUrl, repositoryUrl, screenshotsDir } =
+  Astro.props;
 ---
 
 <div class='mx-auto flex flex-col gap-4 lg:flex-row lg:gap-8'>
@@ -65,7 +69,16 @@ const { image, title, description, technologies, previewUrl, repositoryUrl } = A
             </ActionLinkButton>
           )
         }
+        {
+          typeof screenshotsDir !== 'undefined' && (
+            <ActionLinkButton id='screenshot-button' radius='xl'>
+              <CameraIcon />
+              Screenshots
+            </ActionLinkButton>
+          )
+        }
       </div>
+      <ProjectGallery imageFolder={screenshotsDir} />
     </div>
   </div>
 </div>

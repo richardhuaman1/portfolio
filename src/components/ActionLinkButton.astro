@@ -1,12 +1,13 @@
 ---
 interface Props {
-  href: string;
+  href?: string;
   radius?: 'md' | 'lg' | 'xl' | 'full';
   color?: 'primary' | 'default';
   target?: '_blank' | '_self';
+  id?: string;
 }
 
-const { radius = 'md', color = 'default', target = '_blank', ...restProps } = Astro.props;
+const { radius = 'md', color = 'default', target = '_blank', id, ...restProps } = Astro.props;
 
 const radiusMap = {
   md: 'rounded-md',
@@ -25,11 +26,12 @@ const colorClass = colorMap[color];
 ---
 
 <a
+  id={id}
   {...restProps}
   target={target}
   rel='noopener noreferrer'
   role='link'
-  class={`inline-flex items-center justify-center gap-2 px-4 py-2 transition border-2 ${radiusClass} ${colorClass} text-white text-md group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-offset-2  md:hover:scale-105 ease-in-out delay-100 duration-300`}
+  class={`inline-flex items-center cursor-pointer justify-center gap-2 px-4 py-2 transition border-2 ${radiusClass} ${colorClass} text-white text-md group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-offset-2  md:hover:scale-105 ease-in-out delay-100 duration-300`}
 >
   <slot />
 </a>
