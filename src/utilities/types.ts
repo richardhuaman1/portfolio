@@ -14,6 +14,7 @@ export type Project = {
   technologies: TechnologyTag[];
   repositoryUrl: string | null;
   previewUrl: string | null;
+  screenshotsDir?: string;
 };
 
 export type Technology = {
