@@ -32,59 +32,59 @@ import { SECTION_KEYS } from '@/utilities/constants';
       }
     </div>
   </div>
+</div>
 
-  <script>
-    const dropdownButton = document.getElementById('dropdown-button');
-    const dropdownMenu = document.getElementById('dropdown-menu');
-    const dropdownContainer = document.getElementById('dropdown-container');
+<script>
+  const dropdownButton = document.getElementById('dropdown-button');
+  const dropdownMenu = document.getElementById('dropdown-menu');
+  const dropdownContainer = document.getElementById('dropdown-container');
 
-    dropdownButton?.addEventListener('click', (event) => {
-      event.stopPropagation();
-      dropdownMenu?.classList.toggle('show');
-    });
+  dropdownButton?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    dropdownMenu?.classList.toggle('show');
+  });
 
-    document.addEventListener('click', (event) => {
-      if (!dropdownContainer?.contains(event.target as any)) {
-        dropdownMenu?.classList.remove('show');
-      }
-    });
+  document.addEventListener('click', (event) => {
+    if (!dropdownContainer?.contains(event.target as any)) {
+      dropdownMenu?.classList.remove('show');
+    }
+  });
 
-    const navLinks = document.querySelectorAll('.dropdown-menu a');
+  const navLinks = document.querySelectorAll('.dropdown-menu a');
 
-    // Apply the active class to the first link on page load
-    /*     if (navLinks.length > 0) {
+  // Apply the active class to the first link on page load
+  /*     if (navLinks.length > 0) {
       navLinks[0].classList.add('!text-primary');
     }
  */
-    navLinks.forEach((option, index) => {
-      option.addEventListener('click', (event) => {
-        event.preventDefault();
-        dropdownMenu?.classList.remove('show');
-        if (index === 0) {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          const targetId = option.getAttribute('data-target-id');
-          if (targetId) {
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-              targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
+  navLinks.forEach((option, index) => {
+    option.addEventListener('click', (event) => {
+      event.preventDefault();
+      dropdownMenu?.classList.remove('show');
+      if (index === 0) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const targetId = option.getAttribute('data-target-id');
+        if (targetId) {
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
           }
         }
+      }
 
-        // Remove the active class from all links
-        navLinks.forEach((link) => link.classList.remove('!text-primary'));
-        // Add the active class to the clicked link
-        option.classList.add('!text-primary');
-      });
+      // Remove the active class from all links
+      navLinks.forEach((link) => link.classList.remove('!text-primary'));
+      // Add the active class to the clicked link
+      option.classList.add('!text-primary');
     });
-  </script>
-  <style>
-    .dropdown-menu {
-      display: none;
-    }
-    .dropdown-menu.show {
-      display: block;
-    }
-  </style>
-</div>
+  });
+</script>
+<style>
+  .dropdown-menu {
+    display: none;
+  }
+  .dropdown-menu.show {
+    display: block;
+  }
+</style>
